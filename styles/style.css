@@ -232,6 +232,18 @@ h1, h2, h3, h4, h5, h6, ul, li, aside, nav {
   padding: 0;
 }
 
+h1 {
+  text-shadow: 0 0 10px #4a2;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+main {
+  font-family: "Space Mono", monospace;
+}
+
 ul {
   list-style: none;
 }
@@ -243,4 +255,61 @@ body {
 
 .body-wrapper {
   max-width: 1600px;
+}
+
+header {
+  width: 60%;
+  margin: 0 auto;
+  height: 20%;
+  position: relative;
+}
+
+nav {
+  position: absolute;
+  right: -20%;
+  top: 0;
+  width: 20%;
+}
+
+aside {
+  position: absolute;
+  height: 70%;
+  left: 0;
+  top: 15%;
+  width: 20%;
+}
+
+main {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.button {
+  background-color: limegreen;
+  color: black;
+  width: 200px;
+  height: 50px;
+  display: inline-block;
+  padding: 1em;
+  cursor: default;
+}
+
+.button:hover {
+  background-color: green;
+}
+
+.story-body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 400px;
+}
+
+.choices {
+  text-align: center;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  text-align: center;
 }

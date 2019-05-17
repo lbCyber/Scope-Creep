@@ -22,4 +22,5 @@ storyMain.grabStory = function () {
   });
 }
 
+
 // {chap#}.{branch#}.{part#}.{text[0-1], background, choice[0:choicetext,1:description,2:[0:action1,1:action2]}
