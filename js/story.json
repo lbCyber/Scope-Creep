@@ -1,660 +1,592 @@
 {
-  "chapter": {
-    "1": {
-      "branch": {
-        "0": {
-          "part": {
-            "1": {
-              "text": [
-                "bloopity chapter 1 branch 0 part 1 text 0",
-                "blabla chapter 1 branch 0 part 1 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "2": {
-              "text": [
-                "bloopity chapter 1 branch 0 part 2 text 0",
-                "blabla chapter 1 branch 0 part 2 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "3": {
-              "text": [
-                "bloopity chapter 1 branch 0 part 3 text 0",
-                "blabla chapter 1 branch 0 part 3 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "4": {
-              "text": [
-                "bloopity chapter 1 branch 0 part 4 text 0",
-                "blabla chapter 1 branch 0 part 4 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "5": {
-              "text": [
-                "bloopity chapter 1 branch 0 part 5 text 0",
-                "blabla chapter 1 branch 0 part 5 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            }
-          }
-        }
+  "chap1": {
+    "branch0": {
+      "part1": {
+        "text": [
+          "bloopity chapter 1 branch 0 part 1 text 0",
+          "blabla chapter 1 branch 0 part 1 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part2": {
+        "text": [
+          "bloopity chapter 1 branch 0 part 2 text 0",
+          "blabla chapter 1 branch 0 part 2 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part3": {
+        "text": [
+          "bloopity chapter 1 branch 0 part 3 text 0",
+          "blabla chapter 1 branch 0 part 3 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part4": {
+        "text": [
+          "bloopity chapter 1 branch 0 part 4 text 0",
+          "blabla chapter 1 branch 0 part 4 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part5": {
+        "text": [
+          "bloopity chapter 1 branch 0 part 5 text 0",
+          "blabla chapter 1 branch 0 part 5 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      }
+    }
+  },
+  "chap2": {
+    "branch0": {
+      "part1": {
+        "text": [
+          "bloopity chapter 2 branch 0 part 1 text 0",
+          "blabla chapter 2 branch 0 part 1 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part2": {
+        "text": [
+          "bloopity chapter 2 branch 0 part 2 text 0",
+          "blabla chapter 2 branch 0 part 2 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part3": {
+        "text": [
+          "bloopity chapter 2 branch 0 part 3 text 0",
+          "blabla chapter 2 branch 0 part 3 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part4": {
+        "text": [
+          "bloopity chapter 2 branch 0 part 4 text 0",
+          "blabla chapter 2 branch 0 part 4 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part5": {
+        "text": [
+          "bloopity chapter 2 branch 0 part 5 text 0",
+          "blabla chapter 2 branch 0 part 5 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
       }
     },
-    "2": {
-      "branch": {
-        "0": {
-          "part": {
-            "1": {
-              "text": [
-                "bloopity chapter 2 branch 0 part 1 text 0",
-                "blabla chapter 2 branch 0 part 1 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "2": {
-              "text": [
-                "bloopity chapter 2 branch 0 part 2 text 0",
-                "blabla chapter 2 branch 0 part 2 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "3": {
-              "text": [
-                "bloopity chapter 2 branch 0 part 3 text 0",
-                "blabla chapter 2 branch 0 part 3 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "4": {
-              "text": [
-                "bloopity chapter 2 branch 0 part 4 text 0",
-                "blabla chapter 2 branch 0 part 4 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "5": {
-              "text": [
-                "bloopity chapter 2 branch 0 part 5 text 0",
-                "blabla chapter 2 branch 0 part 5 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            }
-          }
-        },
-        "1": {
-          "part": {
-            "1": {
-              "text": [
-                "bloopity chapter 2 branch 1 part 1 text 0",
-                "blabla chapter 2 branch 1 part 1 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "2": {
-              "text": [
-                "bloopity chapter 2 branch 1 part 2 text 0",
-                "blabla chapter 2 branch 1 part 2 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "3": {
-              "text": [
-                "bloopity chapter 2 branch 1 part 3 text 0",
-                "blabla chapter 2 branch 1 part 3 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "4": {
-              "text": [
-                "bloopity chapter 2 branch 1 part 4 text 0",
-                "blabla chapter 2 branch 1 part 4 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "5": {
-              "text": [
-                "bloopity chapter 2 branch 1 part 5 text 0",
-                "blabla chapter 2 branch 1 part 5 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            }
-          }
-        }
+    "branch1": {
+      "part1": {
+        "text": [
+          "bloopity chapter 2 branch 1 part 1 text 0",
+          "blabla chapter 2 branch 1 part 1 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part2": {
+        "text": [
+          "bloopity chapter 2 branch 1 part 2 text 0",
+          "blabla chapter 2 branch 1 part 2 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part3": {
+        "text": [
+          "bloopity chapter 2 branch 1 part 3 text 0",
+          "blabla chapter 2 branch 1 part 3 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part4": {
+        "text": [
+          "bloopity chapter 2 branch 1 part 4 text 0",
+          "blabla chapter 2 branch 1 part 4 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part5": {
+        "text": [
+          "bloopity chapter 2 branch 1 part 5 text 0",
+          "blabla chapter 2 branch 1 part 5 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      }
+    }
+  },
+  "chap3": {
+    "branch0": {
+      "part1": {
+        "text": [
+          "bloopity chapter 3 branch 0 part 1 text 0",
+          "blabla chapter 3 branch 0 part 1 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part2": {
+        "text": [
+          "bloopity chapter 3 branch 0 part 2 text 0",
+          "blabla chapter 3 branch 0 part 2 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part3": {
+        "text": [
+          "bloopity chapter 3 branch 0 part 3 text 0",
+          "blabla chapter 3 branch 0 part 3 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part4": {
+        "text": [
+          "bloopity chapter 3 branch 0 part 4 text 0",
+          "blabla chapter 3 branch 0 part 4 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part5": {
+        "text": [
+          "bloopity chapter 3 branch 0 part 5 text 0",
+          "blabla chapter 3 branch 0 part 5 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
       }
     },
-    "3": {
-      "branch": {
-        "0": {
-          "part": {
-            "1": {
-              "text": [
-                "bloopity chapter 3 branch 0 part 1 text 0",
-                "blabla chapter 3 branch 0 part 1 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "2": {
-              "text": [
-                "bloopity chapter 3 branch 0 part 2 text 0",
-                "blabla chapter 3 branch 0 part 2 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "3": {
-              "text": [
-                "bloopity chapter 3 branch 0 part 3 text 0",
-                "blabla chapter 3 branch 0 part 3 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "4": {
-              "text": [
-                "bloopity chapter 3 branch 0 part 4 text 0",
-                "blabla chapter 3 branch 0 part 4 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "5": {
-              "text": [
-                "bloopity chapter 3 branch 0 part 5 text 0",
-                "blabla chapter 3 branch 0 part 5 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            }
-          }
-        },
-        "1": {
-          "part": {
-            "1": {
-              "text": [
-                "bloopity chapter 3 branch 1 part 1 text 0",
-                "blabla chapter 3 branch 1 part 1 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "2": {
-              "text": [
-                "bloopity chapter 3 branch 1 part 2 text 0",
-                "blabla chapter 3 branch 1 part 2 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "3": {
-              "text": [
-                "bloopity chapter 3 branch 1 part 3 text 0",
-                "blabla chapter 3 branch 1 part 3 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "4": {
-              "text": [
-                "bloopity chapter 3 branch 1 part 4 text 0",
-                "blabla chapter 3 branch 1 part 4 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            },
-            "5": {
-              "text": [
-                "bloopity chapter 3 branch 1 part 5 text 0",
-                "blabla chapter 3 branch 1 part 5 text 1"
-              ],
-              "background": "",
-              "choices": {
-                "0": [
-                  "ping?",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ],
-                "1": [
-                  "pong!",
-                  "description goes here",
-                  [
-                    "action1",
-                    "action2"
-                  ]
-                ]
-              }
-            }
-          }
-        }
+    "branch1": {
+      "part1": {
+        "text": [
+          "bloopity chapter 3 branch 1 part 1 text 0",
+          "blabla chapter 3 branch 1 part 1 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part2": {
+        "text": [
+          "bloopity chapter 3 branch 1 part 2 text 0",
+          "blabla chapter 3 branch 1 part 2 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part3": {
+        "text": [
+          "bloopity chapter 3 branch 1 part 3 text 0",
+          "blabla chapter 3 branch 1 part 3 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part4": {
+        "text": [
+          "bloopity chapter 3 branch 1 part 4 text 0",
+          "blabla chapter 3 branch 1 part 4 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
+      },
+      "part5": {
+        "text": [
+          "bloopity chapter 3 branch 1 part 5 text 0",
+          "blabla chapter 3 branch 1 part 5 text 1"
+        ],
+        "background": "",
+        "choice0": [
+          "ping?",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ],
+        "choice1": [
+          "pong!",
+          "description goes here",
+          [
+            "action1",
+            "action2"
+          ]
+        ]
       }
     }
   }

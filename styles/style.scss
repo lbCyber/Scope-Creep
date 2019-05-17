@@ -1,1 +1,35 @@
 @import 'partials/normalize';
+
+
+$monoFont: 'Space Mono', monospace;
+$sansFont: 'Rubik', sans-serif;
+
+
+
+html {
+  font: 125%, $sansFont;
+  background-color:#050802;
+  color: #6b2;
+}
+
+img {
+  width:100%;
+}
+
+h1,h2,h3,h4,h5,h6,ul,li,aside,nav { // Let's start at a clean slate
+  margin:0;
+  padding:0;
+}
+
+ul {
+  list-style:none;
+}
+
+body {
+  width:100vw;
+  height:100vh;
+} // let's do this hnngnngrgrgrgh
+
+.body-wrapper {
+  max-width:1600px;
+}
