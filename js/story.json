@@ -1,22 +1,37 @@
 {
-  "chap1": {
-    "branch0": {
-      "part1": {
-        "text": [
-          "bloopity chapter 1 branch 0 part 1 text 0",
-          "blabla chapter 1 branch 0 part 1 text 1"
-        ],
-        "background": "",
+  "start": {
+    "start": {
+      "start": {
+        "text": "<p>This is the starting text</p>",
+        "background": false,
         "choice0": [
           "ping?",
           "description goes here",
           {
             "chapter": "chap1",
-            "part": "part2"
+            "branch": "branch0",
+            "part": "part1"
           }
         ],
         "choice1": [
-          "pong!",
+          "ping?",
+          "description goes here",
+          {
+            "chapter": "chap1",
+            "branch": "branch0",
+            "part": "part1"
+          }
+        ]
+      }
+    }
+  },
+  "chap1": {
+    "branch0": {
+      "part1": {
+        "text": "<p>You are a front-end developer.</p><p>For the last several years you've worked in freelance, mostly designing modest templates for personal blogs and local businesses. The more ambitious contracts have been few and far between, and the lack of challenge has already weighed down on your self-esteem for some time. Worries that the monotony of your life would be all there is for you were taking their toll on your mental health.</p><p>That is, until the day your friend Alex sent you an email asking if you'd like to work for her startup company.</p><p>You didn't even ask what it'd pay.</p><p>You said yes.</p>",
+        "background": false,
+        "choice0": [
+          "next",
           "description goes here",
           {
             "chapter": "chap1",
@@ -25,21 +40,10 @@
         ]
       },
       "part2": {
-        "text": [
-          "bloopity chapter 1 branch 0 part 2 text 0",
-          "blabla chapter 1 branch 0 part 2 text 1"
-        ],
-        "background": "",
+        "text": "<p>You and Alex met in university.</p><p>You had quickly caught on that she was a programming genius. Even though you yourself would go on to graduate at the top of your class with an MSIT from the country's leading IT college, conversations with her still felt intimidating and hard to follow. You weren't ever good at hiding it, but she would always laugh and reassure you of your own ability.</p><p>While you were working in freelance, she was still in school working on her doctorate in Computational Theory. It's been at least two years since you last heard from her.</p><p>Contacting you now must mean she finished her doctorate early, which wouldn't surprise you.</p>",
+        "background": false,
         "choice0": [
-          "ping?",
-          "description goes here",
-          {
-            "chapter": "chap1",
-            "part": "part3"
-          }
-        ],
-        "choice1": [
-          "pong!",
+          "next",
           "description goes here",
           {
             "chapter": "chap1",
@@ -48,21 +52,10 @@
         ]
       },
       "part3": {
-        "text": [
-          "bloopity chapter 1 branch 0 part 3 text 0",
-          "blabla chapter 1 branch 0 part 3 text 1"
-        ],
-        "background": "",
+        "text": "<p>It's been six months now since you accepted Alex's offer for a job.</p><p>It's a typical startup; staffed by only a handful of young geeks crammed into a small office space. You know the other staffers by name, but that's really about it.</p><p>Alex has explained to you a few times now what her company actually does, but it always went a little over your head. She described her work as &quot;drilling peepholes into the Chinese Room.&quot; Your best guess is that she's working on an improved CAPTCHA service; an interface to help easily identify human users from malicious bots. None of it matters, because your only job is to build and expand the company's website, and implement whatever she sends to you. Sometimes it feels like you're no more than a glorified beta tester.</p><p>You're not sure whether the startup will grow or otherwise how long it'll last, but, for now, the pay is good and the workload keeps you busy.</p>",
+        "background": false,
         "choice0": [
-          "ping?",
-          "description goes here",
-          {
-            "chapter": "chap1",
-            "part": "part4"
-          }
-        ],
-        "choice1": [
-          "pong!",
+          "no complaints here",
           "description goes here",
           {
             "chapter": "chap1",
@@ -71,21 +64,10 @@
         ]
       },
       "part4": {
-        "text": [
-          "bloopity chapter 1 branch 0 part 4 text 0",
-          "blabla chapter 1 branch 0 part 4 text 1"
-        ],
-        "background": "",
+        "text": "<p>You're working alone in the office tonight.</p><p>Alex promised this morning to be on the verge of sending you something big, and you didn't mind putting in a few extra hours. There's a virtually-unlimited supply of coffee and pizza in the breakroom, so you'd be comfortable enough.</p><p>After brewing yourself a cup of caffeine juice, you get yourself situated in front of your computer and boot it up.</p> <input type='text' id='namefield' class='namefield' name='namefield' placeholder='Enter your name'>",
+        "background": false,
         "choice0": [
-          "ping?",
-          "description goes here",
-          {
-            "chapter": "chap1",
-            "part": "part5"
-          }
-        ],
-        "choice1": [
-          "pong!",
+          "Login",
           "description goes here",
           {
             "chapter": "chap1",
@@ -94,21 +76,34 @@
         ]
       },
       "part5": {
-        "text": [
-          "bloopity chapter 1 branch 0 part 5 text 0",
-          "blabla chapter 1 branch 0 part 5 text 1"
-        ],
-        "background": "",
+        "text": "<p>Immediately after you login, a popup window notifies you that you have one unread message.</p><p>It's from Alex.</p>",
+        "background": false,
         "choice0": [
-          "ping?",
+          "read it",
           "description goes here",
           {
-            "chapter": "chap2",
-            "part": "part1"
+            "chapter": "chap1",
+            "part": "part6"
           }
-        ],
-        "choice1": [
-          "pong!",
+        ]
+      },
+      "part6": {
+        "text": "<p>From: Alex Brennan</p><p>To: storyMain[name]@crtech.hy</p><p>Subject: IT'S READY!!!</p><p>></p><p>Hey storyMain['name']! Thank you for staying in tonight!</p><p>I've attached a packaged file I'd like you to test out for me! It's a big one (429.66MiB), but don't worry! Most of that is documentation and other stuff to run server-side, so it shouldn't slow down anything on your end. Just extract it into the server's root node, and try calling it from a dummy page to test. No content needed, it should populate the page automatically and give you enough to work with.</p><p>I just need you to run it and try to break it. I've run it a quick couple of times already with no problems, but I need to make sure it can survive an extended run without any issues!</p><p>Keep it running, throw some punches at it, and try to make it crack.</p><p>And let me know what you find!</p><p>-A</p>",
+        "background": false,
+        "choice0": [
+          "next",
+          "description goes here",
+          {
+            "chapter": "chap1",
+            "part": "part7"
+          }
+        ]
+      },
+      "part7": {
+        "text": "<p>Typical. She didn't even explain to you what the project is.</p>",
+        "background": false,
+        "choice0": [
+          "time to work I guess",
           "description goes here",
           {
             "chapter": "chap2",
@@ -121,21 +116,10 @@
   "chap2": {
     "branch0": {
       "part1": {
-        "text": [
-          "bloopity chapter 2 branch 0 part 1 text 0",
-          "blabla chapter 2 branch 0 part 1 text 1"
-        ],
-        "background": "",
+        "text": "<p>At least you know where to start.</p><p>You download the attachment and extract it like she asked. You write a small html file with your own quick personal flourishes and deduce which file to embed.</p><p>There's a small file with the filename &quot;linkThisFileOkay-2.js&quot;. You figure that's the one. A quick check of the contents reveals a short but indecipherable amount of code that seems to call data from the other files you uploaded to the server. With nothing else to do, you save what you have and open up the dummy file.</p>",
+        "background": false,
         "choice0": [
-          "ping?",
-          "description goes here",
-          {
-            "chapter": "chap2",
-            "part": "part2"
-          }
-        ],
-        "choice1": [
-          "pong!",
+          "let's do this",
           "description goes here",
           {
             "chapter": "chap2",
@@ -144,21 +128,10 @@
         ]
       },
       "part2": {
-        "text": [
-          "bloopity chapter 2 branch 0 part 2 text 0",
-          "blabla chapter 2 branch 0 part 2 text 1"
-        ],
-        "background": "",
+        "text": "<p>...Okay, it's blank.</p>",
+        "background": false,
         "choice0": [
-          "ping?",
-          "description goes here",
-          {
-            "chapter": "chap2",
-            "part": "part3"
-          }
-        ],
-        "choice1": [
-          "pong!",
+          "great start",
           "description goes here",
           {
             "chapter": "chap2",
@@ -167,188 +140,135 @@
         ]
       },
       "part3": {
-        "text": [
-          "bloopity chapter 2 branch 0 part 3 text 0",
-          "blabla chapter 2 branch 0 part 3 text 1"
-        ],
-        "background": "",
+        "text": "<p>After giving the script a minute or two to run, you're still left looking at a blank screen. Either you did something wrong or the program is a bust.</p>",
+        "background": false,
         "choice0": [
-          "ping?",
+          "keep waiting",
           "description goes here",
           {
             "chapter": "chap2",
+            "branch": "branch1",
             "part": "part4"
           }
         ],
         "choice1": [
-          "pong!",
+          "check your markup",
           "description goes here",
           {
             "chapter": "chap2",
+            "branch": "branch0",
             "part": "part4"
           }
         ]
       },
       "part4": {
-        "text": [
-          "bloopity chapter 2 branch 0 part 4 text 0",
-          "blabla chapter 2 branch 0 part 4 text 1"
-        ],
-        "background": "",
+        "text": "<p>You triple-check your markup, and find no problems. You do everything from making sure the files are available on the server to comparing MD5 hashes just to be sure the files aren't corrupted. Everything looks good on your end.</p>",
+        "background": false,
         "choice0": [
-          "ping?",
+          "try it again",
           "description goes here",
           {
             "chapter": "chap2",
-            "part": "part5"
-          }
-        ],
-        "choice1": [
-          "pong!",
-          "description goes here",
-          {
-            "chapter": "chap2",
+            "branch": "branch0",
             "part": "part5"
           }
         ]
       },
       "part5": {
-        "text": [
-          "bloopity chapter 2 branch 0 part 5 text 0",
-          "blabla chapter 2 branch 0 part 5 text 1"
-        ],
-        "background": "",
+        "text": "<p></p>",
+        "background": false,
         "choice0": [
-          "ping?",
+          "...",
           "description goes here",
           {
-            "chapter": "chap3",
-            "part": "part1"
+            "chapter": "chap2",
+            "branch": "branch0",
+            "part": "part6"
           }
-        ],
-        "choice1": [
-          "pong!",
+        ]
+      },
+      "part6": {
+        "text": "<p>&</p>",
+        "background": false,
+        "choice0": [
+          "...?",
+          "description goes here",
+          {
+            "chapter": "chap2",
+            "branch": "branch0",
+            "part": "part7"
+          }
+        ]
+      },
+      "part7": {
+        "text": "<p>html</p>",
+        "background": false,
+        "choice0": [
+          "um...",
+          "description goes here",
+          {
+            "chapter": "chap2",
+            "branch": "branch0",
+            "part": "part8"
+          }
+        ]
+      },
+      "part8": {
+        "text": "<p>html</p><p>html</p><p>html</p><p>html</p><p>html</p><p>html</p><p>html</p><p>html</p><p>html</p>",
+        "background": false,
+        "choice0": [
+          "sigh (close the window)",
           "description goes here",
           {
             "chapter": "chap3",
+            "branch": "branch0",
             "part": "part1"
           }
         ]
       }
     },
     "branch1": {
-      "part1": {
-        "text": [
-          "bloopity chapter 2 branch 1 part 1 text 0",
-          "blabla chapter 2 branch 1 part 1 text 1"
-        ],
-        "background": "",
-        "choice0": [
-          "ping?",
-          "description goes here",
-          {
-            "chapter": "chap2",
-            "part": "part2"
-          }
-        ],
-        "choice1": [
-          "pong!",
-          "description goes here",
-          {
-            "chapter": "chap2",
-            "part": "part2"
-          }
-        ]
-      },
-      "part2": {
-        "text": [
-          "bloopity chapter 2 branch 1 part 2 text 0",
-          "blabla chapter 2 branch 1 part 2 text 1"
-        ],
-        "background": "",
-        "choice0": [
-          "ping?",
-          "description goes here",
-          {
-            "chapter": "chap2",
-            "part": "part3"
-          }
-        ],
-        "choice1": [
-          "pong!",
-          "description goes here",
-          {
-            "chapter": "chap2",
-            "part": "part3"
-          }
-        ]
-      },
-      "part3": {
-        "text": [
-          "bloopity chapter 2 branch 1 part 3 text 0",
-          "blabla chapter 2 branch 1 part 3 text 1"
-        ],
-        "background": "",
-        "choice0": [
-          "ping?",
-          "description goes here",
-          {
-            "chapter": "chap2",
-            "part": "part4"
-          }
-        ],
-        "choice1": [
-          "pong!",
-          "description goes here",
-          {
-            "chapter": "chap2",
-            "part": "part4"
-          }
-        ]
-      },
       "part4": {
-        "text": [
-          "bloopity chapter 2 branch 1 part 4 text 0",
-          "blabla chapter 2 branch 1 part 4 text 1"
-        ],
-        "background": "",
+        "text": "<p>After giving the script a minute or two to run, you're still left looking at a blank screen. Either you did something wrong or the program is a bust.</p>",
+        "background": false,
         "choice0": [
-          "ping?",
+          "keep waiting",
           "description goes here",
           {
             "chapter": "chap2",
+            "branch": "branch1",
             "part": "part5"
           }
         ],
         "choice1": [
-          "pong!",
+          "check your markup",
           "description goes here",
           {
             "chapter": "chap2",
-            "part": "part5"
+            "branch": "branch0",
+            "part": "part4"
           }
         ]
       },
       "part5": {
-        "text": [
-          "bloopity chapter 2 branch 1 part 5 text 0",
-          "blabla chapter 2 branch 1 part 5 text 1"
-        ],
-        "background": "",
+        "text": "<p>... nope, nothing.</p>",
+        "background": false,
         "choice0": [
-          "ping?",
+          "wait some more",
           "description goes here",
           {
-            "chapter": "chap3",
-            "part": "part1"
+            "chapter": "chap1",
+            "branch": "branch0",
+            "part": "part5"
           }
         ],
         "choice1": [
-          "pong!",
+          "check your markup already",
           "description goes here",
           {
-            "chapter": "chap3",
-            "part": "part1"
+            "chapter": "chap2",
+            "branch": "branch0",
+            "part": "part4"
           }
         ]
       }
@@ -357,11 +277,8 @@
   "chap3": {
     "branch0": {
       "part1": {
-        "text": [
-          "bloopity chapter 3 branch 0 part 1 text 0",
-          "blabla chapter 3 branch 0 part 1 text 1"
-        ],
-        "background": "",
+        "text": "<p>bloopity chapter 3 branch 0 part 1 text 0</p>",
+        "background": false,
         "choice0": [
           "ping?",
           "description goes here",
@@ -380,11 +297,8 @@
         ]
       },
       "part2": {
-        "text": [
-          "bloopity chapter 3 branch 0 part 2 text 0",
-          "blabla chapter 3 branch 0 part 2 text 1"
-        ],
-        "background": "",
+        "text": "<p>bloopity chapter 3 branch 0 part 2 text 0</p>",
+        "background": false,
         "choice0": [
           "ping?",
           "description goes here",
@@ -403,11 +317,8 @@
         ]
       },
       "part3": {
-        "text": [
-          "bloopity chapter 3 branch 0 part 3 text 0",
-          "blabla chapter 3 branch 0 part 3 text 1"
-        ],
-        "background": "",
+        "text": "<p>bloopity chapter 3 branch 0 part 3 text 0</p>",
+        "background": false,
         "choice0": [
           "ping?",
           "description goes here",
@@ -426,11 +337,8 @@
         ]
       },
       "part4": {
-        "text": [
-          "bloopity chapter 3 branch 0 part 4 text 0",
-          "blabla chapter 3 branch 0 part 4 text 1"
-        ],
-        "background": "",
+        "text": "<p>bloopity chapter 3 branch 0 part 4 text 0</p>",
+        "background": false,
         "choice0": [
           "ping?",
           "description goes here",
@@ -449,11 +357,8 @@
         ]
       },
       "part5": {
-        "text": [
-          "bloopity chapter 3 branch 0 part 5 text 0",
-          "blabla chapter 3 branch 0 part 5 text 1"
-        ],
-        "background": "",
+        "text": "<p>bloopity chapter 3 branch 0 part 5 text 0</p>",
+        "background": false,
         "choice0": [
           "ping?",
           "description goes here",
@@ -474,11 +379,8 @@
     },
     "branch1": {
       "part1": {
-        "text": [
-          "bloopity chapter 3 branch 1 part 1 text 0",
-          "blabla chapter 3 branch 1 part 1 text 1"
-        ],
-        "background": "",
+        "text": "<p>bloopity chapter 3 branch 1 part 1 text 0</p>",
+        "background": false,
         "choice0": [
           "ping?",
           "description goes here",
@@ -497,11 +399,8 @@
         ]
       },
       "part2": {
-        "text": [
-          "bloopity chapter 3 branch 1 part 2 text 0",
-          "blabla chapter 3 branch 1 part 2 text 1"
-        ],
-        "background": "",
+        "text": "<p>bloopity chapter 3 branch 1 part 2 text 0</p>",
+        "background": false,
         "choice0": [
           "ping?",
           "description goes here",
@@ -520,11 +419,8 @@
         ]
       },
       "part3": {
-        "text": [
-          "bloopity chapter 3 branch 1 part 3 text 0",
-          "blabla chapter 3 branch 1 part 3 text 1"
-        ],
-        "background": "",
+        "text": "<p>bloopity chapter 3 branch 1 part 3 text 0</p>",
+        "background": false,
         "choice0": [
           "ping?",
           "description goes here",
@@ -543,11 +439,8 @@
         ]
       },
       "part4": {
-        "text": [
-          "bloopity chapter 3 branch 1 part 4 text 0",
-          "blabla chapter 3 branch 1 part 4 text 1"
-        ],
-        "background": "",
+        "text": "<p>bloopity chapter 3 branch 1 part 4 text 0</p>",
+        "background": false,
         "choice0": [
           "ping?",
           "description goes here",
@@ -566,11 +459,8 @@
         ]
       },
       "part5": {
-        "text": [
-          "bloopity chapter 3 branch 1 part 5 text 0",
-          "blabla chapter 3 branch 1 part 5 text 1"
-        ],
-        "background": "",
+        "text": "<p>bloopity chapter 3 branch 1 part 5 text 0</p>",
+        "background": false,
         "choice0": [
           "ping?",
           "description goes here",

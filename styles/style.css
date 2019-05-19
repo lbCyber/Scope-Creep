@@ -218,7 +218,7 @@ template {
 }
 
 html {
-  font: 125%, "Rubik", sans-serif;
+  font: 125% "Rubik", sans-serif;
   background-color: #050802;
   color: #6b2;
 }
@@ -227,16 +227,48 @@ img {
   width: 100%;
 }
 
-h1, h2, h3, h4, h5, h6, ul, li, aside, nav {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+aside,
+nav {
   margin: 0;
   padding: 0;
 }
 
 h1 {
-  text-shadow: 0 0 10px #4a2;
+  position: relative;
+  text-shadow: 0 0 2px #4a2;
+  -webkit-text-decoration: underline overline dotted;
+  text-decoration: underline overline dotted;
+  max-width: 100%;
+  display: inline-block;
+  margin: 0 auto;
+  mix-blend-mode: screen;
 }
 
-h1, h2, h3 {
+h1::after {
+  background-image: -webkit-repeating-linear-gradient(bottom, rgba(64, 176, 32, 0) 0, #40b020 3px, rgba(64, 176, 32, 0) 6px), -webkit-radial-gradient(50% 60%, ellipse closest-side, rgba(84, 216, 42, 0.8) 0% 5%, #162008 80%, #050802);
+  background-image: -o-repeating-linear-gradient(bottom, rgba(64, 176, 32, 0) 0, #40b020 3px, rgba(64, 176, 32, 0) 6px), -o-radial-gradient(50% 60%, ellipse closest-side, rgba(84, 216, 42, 0.8) 0% 5%, #162008 80%, #050802);
+  background-image: repeating-linear-gradient(0deg, rgba(64, 176, 32, 0) 0, #40b020 3px, rgba(64, 176, 32, 0) 6px), radial-gradient(ellipse closest-side at 50% 60%, rgba(84, 216, 42, 0.8) 0% 5%, #162008 80%, #050802);
+  mix-blend-mode: hue;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  background-blend-mode: color-dodge;
+  opacity: 0.2;
+}
+
+h1,
+h2,
+h3 {
   text-align: center;
 }
 
@@ -264,6 +296,12 @@ header {
   position: relative;
 }
 
+.header-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 nav {
   position: absolute;
   right: -20%;
@@ -287,10 +325,11 @@ main {
 .button {
   background-color: limegreen;
   color: black;
-  width: 200px;
+  min-width: 200px;
   height: 50px;
   display: inline-block;
-  padding: 1em;
+  padding: .5em;
+  border-radius: 5px;
   cursor: default;
 }
 
@@ -301,11 +340,25 @@ main {
 .story-body {
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 400px;
+  scrollbar-color: green transparent;
+  scrollbar-width: thin;
+  min-height: 400px;
+  max-height: 600px;
+  border: 3px dashed rgba(84, 216, 42, 0.3);
+  border-radius: 2px;
+}
+
+.story-body-text {
+  min-height: calc(100% - 190px);
+}
+
+.hideOption {
+  display: none;
 }
 
 .choices {
   text-align: center;
+  min-height: 125px;
 }
 
 footer {
