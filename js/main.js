@@ -2,17 +2,13 @@ let currentChapter = "";
 let currentBranch = "";
 let currentPart = "";
 
-const base = function () {
-  return storyMain.storyData[currentChapter][currentBranch][currentPart];
-};
-
 const storyMain = {
   position: {
     chapter: "start",
     branch: "start",
     part: "start",
     text: "",
-    background: "",
+    image: "",
     choice0: "",
     choice0desc: "",
     choice1: "",
@@ -21,6 +17,44 @@ const storyMain = {
   name: "",
   choices: {},
   state: 0
+}
+
+$(function () {
+  storyMain.grabStory();
+  $('.option0').on('click', function () {
+    breadCrumbCheck('choice0');
+    $.extend(storyMain.position, readChanges('choice0'));
+    injectChanges();
+  });
+
+  $('.option1').on('click', function () {
+    breadCrumbCheck('choice1');
+    $.extend(storyMain.position, readChanges('choice1'));
+    injectChanges();
+  });
+});
+
+const breadCrumbCheck = function (option) {
+  if (readChanges(option)['chapter']) {
+    let crumb = readChanges(option)['chapter'];
+    if (crumb === 'chap2') {
+      $('.crumb-1').removeClass('incomplete-bread-crumb');
+      $('.crumb-2').removeClass('hide-option');
+      $('.crumb-2').addClass('incomplete-bread-crumb');
+    } else if (crumb === 'chap3') {
+      $('.crumb-2').removeClass('incomplete-bread-crumb');
+      $('.crumb-3').removeClass('hide-option');
+      $('.crumb-3').addClass('incomplete-bread-crumb');
+    } else if (crumb === 'chap4') {
+      $('.crumb-3').removeClass('incomplete-bread-crumb');
+      $('.crumb-4').removeClass('hide-option');
+      $('.crumb-4').addClass('incomplete-bread-crumb');
+    } else if (crumb === 'chap5') {
+      $('.crumb-4').removeClass('incomplete-bread-crumb');
+      $('.crumb-5').removeClass('hide-option');
+      $('.crumb-5').addClass('incomplete-bread-crumb');
+    }
+  }
 }
 
 storyMain.grabStory = function () {
@@ -33,18 +67,13 @@ storyMain.grabStory = function () {
   });
 }
 
-$(function () {
-  storyMain.grabStory();
-  $('.option0').on('click', function () {
-    $.extend(storyMain.position, readChanges("choice0"));
-    injectChanges();
-  });
+const base = function () {
+  return storyMain.storyData[currentChapter][currentBranch][currentPart];
+};
 
-  $('.option1').on('click', function () {
-    $.extend(storyMain.position, readChanges("choice1"));
-    injectChanges();
-  });
-});
+const currentBase = function () {
+  return storyMain.position;
+};
 
 const refreshPosition = function () {
   currentChapter = storyMain.position.chapter;
@@ -70,7 +99,7 @@ const readNewPosition = function () {
     readArray["choice1"] = false;
     readArray["choice1desc"] = false;
   }
-  readArray["background"] = base()["background"];
+  readArray["image"] = base()["image"];
   readArray["text"] = base()["text"];
   return readArray;
 }
@@ -81,21 +110,27 @@ const initChanges = function () {
 
 const injectChanges = function (choice) {
   initChanges();
-  $('.story-body-text').html(storyMain.position.text);
-  $('.option0').text(storyMain.position.choice0);
-  if (storyMain.position.choice1) {
-    if ($('.option1').hasClass('hideOption')) {
-      $('.option1').removeClass('hideOption');
+  $('.story-body-text').addClass('text-transition');
+  $('.story-body').animate({ scrollTop: 0 }, 100);
+  setTimeout(function () {
+    $('.story-body-text').html(storyMain.position.text);
+    $('.story-body-text').removeClass('text-transition')
+    $('.option0').text(storyMain.position.choice0);
+    $('.option0-desc').html(storyMain.position.choice0desc);
+    if (storyMain.position.choice1) {
+      if ($('.option1').hasClass('hide-option')) {
+        $('.option1').removeClass('hide-option');
+      }
+      $('.option1').text(storyMain.position.choice1);
+      $('.option1-desc').html(storyMain.position.choice1desc);
+    } else {
+      if (!($('.option1').hasClass('hide-option'))) {
+        $('.option1').addClass('hide-option');
+      }
     }
-    $('.option1').text(storyMain.position.choice1);
-  } else {
-    if (!($('.option1').hasClass('hideOption'))) {
-      $('.option1').addClass('hideOption');
+    if (storyMain.position.image) {
+      $('.story-body').style.image = `url: "./assets/${storyMain.position.image}"`;
     }
-  }
-  if (storyMain.position.background) {
-    $('.story-body').style.background = `url: "./assets/${storyMain.position.background}"`;
-  }
-  $('.story-body').animate({ scrollTop: 0 }, "fast");
+  }, 750);
 }
-// {chap#}.{branch#}.{part#}.text, background, choice[0:choicetext,1:description,2:{actions}}
+// {chap#}.{branch#}.{part#}.text, image, choice[0:choicetext,1:description,2:{actions}}

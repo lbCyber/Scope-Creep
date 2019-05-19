@@ -1,0 +1,333 @@
+$default-foreground: #6b2;
+$default-dark: #251;
+$default-back: #050802;
+$default-transparent-30: rgba(84, 216, 42, 0.3);
+$default-transparent-60: rgba(84, 216, 42, 0.6);
+
+$ibm-foreground: #f8fcff;
+$ibm-back: #012;
+$ibm-dark: #158;
+$ibm-transparent-30: rgba(248, 252, 255, 0.3);
+$ibm-transparent-60: rgba(248, 252, 255, 0.6);
+
+$appleii-foreground: #dcc;
+$appleii-back: #211;
+$appleii-dark: #a87;
+$appleii-transparent-30: rgba(221, 204, 204, 0.3);
+$appleii-transparent-60: rgba(221, 204, 204, 0.6);
+
+$commodore-foreground: #8ff;
+$commodore-back: #26c;
+$commodore-dark: #4bb;
+$commodore-transparent-30: rgba(136,255,255,.3);
+$commodore-transparent-60: rgba(136,255,255,.6);
+
+$dos-foreground: #eee;
+$dos-back: #111;
+$dos-dark: #888;
+$dos-transparent-30: rgba(225, 225, 225, 0.3);
+$dos-transparent-60: rgba(225, 225, 225, 0.6);
+
+$plaintext-foreground: #000;
+$plaintext-back: #fff;
+
+html.style-1 {
+  background-color: $default-back;
+  color: $default-foreground;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  i,
+  button {
+    background-clip: text;
+    background-image: repeating-linear-gradient(0deg, transparent 0, $default-foreground 2px, transparent 3px);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-shadow: 0 0 1.6px $default-foreground;
+    color: $default-transparent-30;
+  }
+  p,
+  i {
+    color: $default-transparent-60;
+  }
+
+  .button, button {
+    background-color: $default-foreground;
+    color: $default-back;
+    background-clip: unset;
+    &:hover {
+      background-color: $default-dark;
+    }
+  }
+
+  .story-body {
+    scrollbar-color: $default-dark transparent;
+    padding: 45px;
+    input {
+      border: 2px solid $default-foreground;
+      background-color: $default-back;
+      color: $default-foreground;
+    }    
+  }
+
+  .incomplete-bread-crumb {
+    color:$default-back;
+    text-shadow: 0 0 10px $default-foreground;
+  }
+}
+
+html.style-2 {
+  background-color: $ibm-back;
+  color: $ibm-foreground;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  i,
+  button {
+    background-clip: text;
+    background-image: repeating-linear-gradient(0deg, transparent 0, $ibm-foreground 2px, transparent 3px);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-shadow: 0 0 1.6px $ibm-foreground;
+    color: $ibm-transparent-30;
+  }
+  p,
+  i {
+    color: $ibm-transparent-60;
+  }
+  .button, button {
+    background-color: $ibm-foreground;
+    color: $ibm-back;
+    background-clip: unset;
+    &:hover {
+      background-color: $ibm-dark;
+    }
+  }
+
+  .story-body {
+    scrollbar-color: $ibm-dark transparent;
+    border: 2px solid $ibm-transparent-30;
+    padding: 43px;
+    input {
+      border: 2px solid $ibm-transparent-30;
+      background-color: $ibm-back;
+      color: $ibm-foreground;
+    }
+  }
+
+  .incomplete-bread-crumb {
+    color:$ibm-back;
+    text-shadow: 0 0 10px $ibm-foreground;
+  }
+}
+
+html.style-3 {
+  background-color: $appleii-back;
+  color: $appleii-foreground;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  i,
+  button {
+    background-clip: text;
+    background-image: repeating-linear-gradient(0deg, transparent 0, $appleii-foreground 2px, transparent 3px);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-shadow: 0 0 1.6px $appleii-foreground;
+    color: $appleii-transparent-30;
+  }
+  p,
+  i {
+    color: $appleii-transparent-60;
+  }
+  .button, button {
+    background-color: $appleii-foreground;
+    color: $appleii-back;
+    background-clip: unset;
+    &:hover {
+      background-color: $appleii-dark;
+    }
+  }
+
+  .story-body {
+    scrollbar-color: $appleii-dark transparent;
+    border: 3px double $appleii-transparent-30;
+    padding: 42px;
+    input {
+      border: 3px double $appleii-transparent-30;
+      background-color: $appleii-back;
+      color: $appleii-foreground;
+    }
+  }
+
+  .incomplete-bread-crumb {
+    color:$appleii-back;
+    text-shadow: 0 0 10px $appleii-foreground;
+  }
+}
+
+html.style-4 {
+  background-color: $commodore-back;
+  color: $commodore-foreground;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  i,
+  button {
+    background-clip: text;
+    background-image: repeating-linear-gradient(0deg, transparent 0, $commodore-foreground 2px, transparent 3px);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-shadow: 0 0 1.6px $commodore-foreground;
+    color: $commodore-transparent-30;
+  }
+  p,
+  i {
+    color: $commodore-transparent-60;
+  }
+  .button, button {
+    background-color: $commodore-foreground;
+    color: $commodore-back;
+    background-clip: unset;
+    &:hover {
+      background-color: $commodore-dark;
+    }
+  }
+
+  .story-body {
+    scrollbar-color: $commodore-foreground transparent;
+    border: 35px solid $commodore-transparent-30;
+    padding: 10px;
+    input {
+      border: 3px solid $commodore-transparent-30;
+      background-color: $commodore-back;
+      color: $commodore-foreground;
+    }
+  }
+
+  .incomplete-bread-crumb {
+    color:$commodore-back;
+    text-shadow: 0 0 10px $commodore-foreground;
+  }
+}
+
+html.style-5 {
+  background-color: $dos-back;
+  color: $dos-foreground;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  i,
+  button {
+    background-clip: text;
+    background-image: repeating-linear-gradient(0deg, transparent 0, $dos-foreground 2px, transparent 3px);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-shadow: 0 0 1.6px $dos-foreground;
+    color: $dos-transparent-30;
+  }
+  p,
+  i {
+    color: $dos-transparent-60;
+  }
+  .button, button {
+    background-color: $dos-foreground;
+    color: $dos-back;
+    background-clip: unset;
+    &:hover {
+      background-color: $dos-dark;
+    }
+  }
+
+  .story-body {
+    scrollbar-color: $dos-dark transparent;
+    border: 3px solid $dos-transparent-30;
+    padding: 42px;
+    input {
+      border: 3px solid $dos-transparent-30;
+      background-color: $dos-back;
+      color: $dos-foreground;
+    }
+  }
+
+  .incomplete-bread-crumb {
+    color:$dos-back;
+    text-shadow: 0 0 10px $dos-foreground;
+  }
+}
+
+html.style-6 {
+  background-color: $plaintext-back;
+  color: $plaintext-foreground;
+
+  .button, button {
+    background-color: $plaintext-foreground;
+    color: $plaintext-back;
+    &:hover {
+      background-color: $plaintext-back;
+      color: $plaintext-foreground;
+      box-shadow: 0 0 0 2px $plaintext-foreground;
+    }
+  }
+
+  .story-body {
+    scrollbar-color: $plaintext-foreground transparent;
+    border: 3px double $plaintext-foreground;
+    padding: 42px;
+    input {
+      border: 3px double $plaintext-foreground;
+      background-color: $plaintext-back;
+      color: $plaintext-foreground;
+    }
+  }
+
+  .incomplete-bread-crumb {
+    color:$plaintext-back;
+    text-shadow: 0 0 10px $plaintext-foreground;
+  }
+}

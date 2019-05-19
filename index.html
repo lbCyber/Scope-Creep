@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="style-1">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Rubik|IBM+Plex+Mono:500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/style.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Rubik|Space+Mono&display=swap" rel="stylesheet">
   <title>Project 3 - Paul Rocca</title>
   <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
 </head>
@@ -24,13 +25,25 @@
         <div class="nav-collapser">
           <ul class="main-nav-list">
             <li>
-              <a href="#">Home</a>
+              <a href="">Home</a>
             </li>
             <li>
-              <a href="#">Nav1</a>
+              <button class="style-picker" name="style-1" aria-hidden>default</button>
             </li>
             <li>
-              <a href="#">Nav2</a>
+              <button class="style-picker" name="style-2" aria-hidden>ibm</button>
+            </li>
+            <li>
+              <button class="style-picker" name="style-3" aria-hidden>apple-ii</button>
+            </li>
+            <li>
+              <button class="style-picker" name="style-4" aria-hidden>commodore</button>
+            </li>
+            <li>
+              <button class="style-picker" name="style-5" aria-hidden>dos</button>
+            </li>
+            <li>
+              <button class="style-picker" name="style-6" aria-hidden>plaintext</button>
             </li>
           </ul>
         </div>
@@ -39,11 +52,15 @@
     <main>
       <aside>
         <div class="bread-crumbs">
-          <p>Breadcrumbs or something will go here</p>
+          <ul>
+            <li><i class="fas fa-mug-hot incomplete-bread-crumb crumb-1"></i></li>
+            <li><i class="fas fa-bug hide-option crumb-2"></i></li>
+            <li><i class="fas fa-comment-dots hide-option crumb-3"></i></li>
+          </ul>
         </div>
       </aside>
       <div class="story-body">
-        <h2 class="story-title">This is a body header</h2>
+        <h2 class="story-title">Introduction</h2>
         <div class="story-body-text">
           <p>Story will be generated here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur
             cumque, deserunt non cum minima quis nostrum iusto nobis molestias fugiat illo quae molestiae facere
@@ -62,9 +79,10 @@
             deserunt neque veritatis repudiandae iure quas laborum qui? Similique rem assumenda aliquid!</p>
         </div>
         <div class="choices">
-          <h3>Here be options</h3>
-          <p class="button option0">An option here</p>
-          <p class="button option1">Also an option</p>
+          <p class="button option0">Begin</p>
+          <h3 class="option0-desc">Start the story</h3>
+          <p class="button option1 hide-option">Also an option</p>
+          <h3 class="option1-desc"></h3>
         </div>
       </div>
     </main>
@@ -74,5 +92,6 @@
   </div>
 </body>
 <script defer src='./js/main.js'></script>
+<script defer src='./js/colourselector.js'></script>
 
 </html>

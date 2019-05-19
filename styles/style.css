@@ -219,8 +219,6 @@ template {
 
 html {
   font: 125% "Rubik", sans-serif;
-  background-color: #050802;
-  color: #6b2;
 }
 
 img {
@@ -243,27 +241,11 @@ nav {
 
 h1 {
   position: relative;
-  text-shadow: 0 0 2px #4a2;
   -webkit-text-decoration: underline overline dotted;
   text-decoration: underline overline dotted;
   max-width: 100%;
   display: inline-block;
   margin: 0 auto;
-  mix-blend-mode: screen;
-}
-
-h1::after {
-  background-image: -webkit-repeating-linear-gradient(bottom, rgba(64, 176, 32, 0) 0, #40b020 3px, rgba(64, 176, 32, 0) 6px), -webkit-radial-gradient(50% 60%, ellipse closest-side, rgba(84, 216, 42, 0.8) 0% 5%, #162008 80%, #050802);
-  background-image: -o-repeating-linear-gradient(bottom, rgba(64, 176, 32, 0) 0, #40b020 3px, rgba(64, 176, 32, 0) 6px), -o-radial-gradient(50% 60%, ellipse closest-side, rgba(84, 216, 42, 0.8) 0% 5%, #162008 80%, #050802);
-  background-image: repeating-linear-gradient(0deg, rgba(64, 176, 32, 0) 0, #40b020 3px, rgba(64, 176, 32, 0) 6px), radial-gradient(ellipse closest-side at 50% 60%, rgba(84, 216, 42, 0.8) 0% 5%, #162008 80%, #050802);
-  mix-blend-mode: hue;
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  background-blend-mode: color-dodge;
-  opacity: 0.2;
 }
 
 h1,
@@ -273,7 +255,8 @@ h3 {
 }
 
 main {
-  font-family: "Space Mono", monospace;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
 }
 
 ul {
@@ -322,47 +305,483 @@ main {
   margin: 0 auto;
 }
 
+button,
 .button {
-  background-color: limegreen;
-  color: black;
+  border-radius: 5px;
+  -webkit-transition: background 0.4s;
+  -o-transition: background 0.4s;
+  transition: background 0.4s;
+}
+
+.button {
   min-width: 200px;
   height: 50px;
   display: inline-block;
-  padding: .5em;
-  border-radius: 5px;
+  padding: 0.5em;
   cursor: default;
+  margin-top: 70px;
 }
 
-.button:hover {
-  background-color: green;
+button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: calc(100% - 10px);
+  height: 40px;
+  border: none;
+  margin: 10px 5px;
 }
 
 .story-body {
   overflow-y: scroll;
   overflow-x: hidden;
-  scrollbar-color: green transparent;
   scrollbar-width: thin;
   min-height: 400px;
   max-height: 600px;
-  border: 3px dashed rgba(84, 216, 42, 0.3);
   border-radius: 2px;
 }
 
 .story-body-text {
   min-height: calc(100% - 190px);
+  -webkit-transition: opacity 0.75s;
+  -o-transition: opacity 0.75s;
+  transition: opacity 0.75s;
+  opacity: 1;
 }
 
-.hideOption {
+.story-body-text input {
+  width: 70%;
+  text-align: center;
+  margin-left: calc(15%);
+  height: 46px;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.text-transition {
+  opacity: 0;
+}
+
+.hide-option {
   display: none;
 }
 
 .choices {
+  position: relative;
   text-align: center;
   min-height: 125px;
+}
+
+.choices h3 {
+  -webkit-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 10px;
+  opacity: 0;
+}
+
+.option0:hover + .option0-desc {
+  opacity: 1;
+}
+
+.option1:hover + .option1-desc {
+  opacity: 1;
+}
+
+.bread-crumbs {
+  font-size: 80px;
+  text-align: center;
+}
+
+.crumb-1 {
+  padding-left: 15px;
 }
 
 footer {
   position: relative;
   bottom: 0;
   text-align: center;
+}
+
+.caret {
+  -webkit-animation: blink-caret 0.6s step-end infinite;
+  animation: blink-caret 0.6s step-end infinite;
+  -webkit-animation-fill-mode: none;
+  animation-fill-mode: none;
+}
+
+@-webkit-keyframes blink-caret {
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+html.style-1 {
+  background-color: #050802;
+  color: #6b2;
+}
+
+html.style-1 h1,
+html.style-1 h2,
+html.style-1 h3,
+html.style-1 h4,
+html.style-1 h5,
+html.style-1 h6,
+html.style-1 p,
+html.style-1 i,
+html.style-1 button {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: -webkit-repeating-linear-gradient(bottom, transparent 0, #6b2 2px, transparent 3px);
+  background-image: -o-repeating-linear-gradient(bottom, transparent 0, #6b2 2px, transparent 3px);
+  background-image: repeating-linear-gradient(0deg, transparent 0, #6b2 2px, transparent 3px);
+}
+
+html.style-1 h1,
+html.style-1 h2,
+html.style-1 h3,
+html.style-1 h4,
+html.style-1 h5,
+html.style-1 h6 {
+  text-shadow: 0 0 1.6px #6b2;
+  color: rgba(84, 216, 42, 0.3);
+}
+
+html.style-1 p,
+html.style-1 i {
+  color: rgba(84, 216, 42, 0.6);
+}
+
+html.style-1 .button, html.style-1 button {
+  background-color: #6b2;
+  color: #050802;
+  background-clip: unset;
+}
+
+html.style-1 .button:hover, html.style-1 button:hover {
+  background-color: #251;
+}
+
+html.style-1 .story-body {
+  scrollbar-color: #251 transparent;
+  padding: 45px;
+}
+
+html.style-1 .story-body input {
+  border: 2px solid #6b2;
+  background-color: #050802;
+  color: #6b2;
+}
+
+html.style-1 .incomplete-bread-crumb {
+  color: #050802;
+  text-shadow: 0 0 10px #6b2;
+}
+
+html.style-2 {
+  background-color: #012;
+  color: #f8fcff;
+}
+
+html.style-2 h1,
+html.style-2 h2,
+html.style-2 h3,
+html.style-2 h4,
+html.style-2 h5,
+html.style-2 h6,
+html.style-2 p,
+html.style-2 i,
+html.style-2 button {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: -webkit-repeating-linear-gradient(bottom, transparent 0, #f8fcff 2px, transparent 3px);
+  background-image: -o-repeating-linear-gradient(bottom, transparent 0, #f8fcff 2px, transparent 3px);
+  background-image: repeating-linear-gradient(0deg, transparent 0, #f8fcff 2px, transparent 3px);
+}
+
+html.style-2 h1,
+html.style-2 h2,
+html.style-2 h3,
+html.style-2 h4,
+html.style-2 h5,
+html.style-2 h6 {
+  text-shadow: 0 0 1.6px #f8fcff;
+  color: rgba(248, 252, 255, 0.3);
+}
+
+html.style-2 p,
+html.style-2 i {
+  color: rgba(248, 252, 255, 0.6);
+}
+
+html.style-2 .button, html.style-2 button {
+  background-color: #f8fcff;
+  color: #012;
+  background-clip: unset;
+}
+
+html.style-2 .button:hover, html.style-2 button:hover {
+  background-color: #158;
+}
+
+html.style-2 .story-body {
+  scrollbar-color: #158 transparent;
+  border: 2px solid rgba(248, 252, 255, 0.3);
+  padding: 43px;
+}
+
+html.style-2 .story-body input {
+  border: 2px solid rgba(248, 252, 255, 0.3);
+  background-color: #012;
+  color: #f8fcff;
+}
+
+html.style-2 .incomplete-bread-crumb {
+  color: #012;
+  text-shadow: 0 0 10px #f8fcff;
+}
+
+html.style-3 {
+  background-color: #211;
+  color: #dcc;
+}
+
+html.style-3 h1,
+html.style-3 h2,
+html.style-3 h3,
+html.style-3 h4,
+html.style-3 h5,
+html.style-3 h6,
+html.style-3 p,
+html.style-3 i,
+html.style-3 button {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: -webkit-repeating-linear-gradient(bottom, transparent 0, #dcc 2px, transparent 3px);
+  background-image: -o-repeating-linear-gradient(bottom, transparent 0, #dcc 2px, transparent 3px);
+  background-image: repeating-linear-gradient(0deg, transparent 0, #dcc 2px, transparent 3px);
+}
+
+html.style-3 h1,
+html.style-3 h2,
+html.style-3 h3,
+html.style-3 h4,
+html.style-3 h5,
+html.style-3 h6 {
+  text-shadow: 0 0 1.6px #dcc;
+  color: rgba(221, 204, 204, 0.3);
+}
+
+html.style-3 p,
+html.style-3 i {
+  color: rgba(221, 204, 204, 0.6);
+}
+
+html.style-3 .button, html.style-3 button {
+  background-color: #dcc;
+  color: #211;
+  background-clip: unset;
+}
+
+html.style-3 .button:hover, html.style-3 button:hover {
+  background-color: #a87;
+}
+
+html.style-3 .story-body {
+  scrollbar-color: #a87 transparent;
+  border: 3px double rgba(221, 204, 204, 0.3);
+  padding: 42px;
+}
+
+html.style-3 .story-body input {
+  border: 3px double rgba(221, 204, 204, 0.3);
+  background-color: #211;
+  color: #dcc;
+}
+
+html.style-3 .incomplete-bread-crumb {
+  color: #211;
+  text-shadow: 0 0 10px #dcc;
+}
+
+html.style-4 {
+  background-color: #26c;
+  color: #8ff;
+}
+
+html.style-4 h1,
+html.style-4 h2,
+html.style-4 h3,
+html.style-4 h4,
+html.style-4 h5,
+html.style-4 h6,
+html.style-4 p,
+html.style-4 i,
+html.style-4 button {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: -webkit-repeating-linear-gradient(bottom, transparent 0, #8ff 2px, transparent 3px);
+  background-image: -o-repeating-linear-gradient(bottom, transparent 0, #8ff 2px, transparent 3px);
+  background-image: repeating-linear-gradient(0deg, transparent 0, #8ff 2px, transparent 3px);
+}
+
+html.style-4 h1,
+html.style-4 h2,
+html.style-4 h3,
+html.style-4 h4,
+html.style-4 h5,
+html.style-4 h6 {
+  text-shadow: 0 0 1.6px #8ff;
+  color: rgba(136, 255, 255, 0.3);
+}
+
+html.style-4 p,
+html.style-4 i {
+  color: rgba(136, 255, 255, 0.6);
+}
+
+html.style-4 .button, html.style-4 button {
+  background-color: #8ff;
+  color: #26c;
+  background-clip: unset;
+}
+
+html.style-4 .button:hover, html.style-4 button:hover {
+  background-color: #4bb;
+}
+
+html.style-4 .story-body {
+  scrollbar-color: #8ff transparent;
+  border: 35px solid rgba(136, 255, 255, 0.3);
+  padding: 10px;
+}
+
+html.style-4 .story-body input {
+  border: 3px solid rgba(136, 255, 255, 0.3);
+  background-color: #26c;
+  color: #8ff;
+}
+
+html.style-4 .incomplete-bread-crumb {
+  color: #26c;
+  text-shadow: 0 0 10px #8ff;
+}
+
+html.style-5 {
+  background-color: #111;
+  color: #eee;
+}
+
+html.style-5 h1,
+html.style-5 h2,
+html.style-5 h3,
+html.style-5 h4,
+html.style-5 h5,
+html.style-5 h6,
+html.style-5 p,
+html.style-5 i,
+html.style-5 button {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-image: -webkit-repeating-linear-gradient(bottom, transparent 0, #eee 2px, transparent 3px);
+  background-image: -o-repeating-linear-gradient(bottom, transparent 0, #eee 2px, transparent 3px);
+  background-image: repeating-linear-gradient(0deg, transparent 0, #eee 2px, transparent 3px);
+}
+
+html.style-5 h1,
+html.style-5 h2,
+html.style-5 h3,
+html.style-5 h4,
+html.style-5 h5,
+html.style-5 h6 {
+  text-shadow: 0 0 1.6px #eee;
+  color: rgba(225, 225, 225, 0.3);
+}
+
+html.style-5 p,
+html.style-5 i {
+  color: rgba(225, 225, 225, 0.6);
+}
+
+html.style-5 .button, html.style-5 button {
+  background-color: #eee;
+  color: #111;
+  background-clip: unset;
+}
+
+html.style-5 .button:hover, html.style-5 button:hover {
+  background-color: #888;
+}
+
+html.style-5 .story-body {
+  scrollbar-color: #888 transparent;
+  border: 3px solid rgba(225, 225, 225, 0.3);
+  padding: 42px;
+}
+
+html.style-5 .story-body input {
+  border: 3px solid rgba(225, 225, 225, 0.3);
+  background-color: #111;
+  color: #eee;
+}
+
+html.style-5 .incomplete-bread-crumb {
+  color: #111;
+  text-shadow: 0 0 10px #eee;
+}
+
+html.style-6 {
+  background-color: #fff;
+  color: #000;
+}
+
+html.style-6 .button, html.style-6 button {
+  background-color: #000;
+  color: #fff;
+}
+
+html.style-6 .button:hover, html.style-6 button:hover {
+  background-color: #fff;
+  color: #000;
+  -webkit-box-shadow: 0 0 0 2px #000;
+  box-shadow: 0 0 0 2px #000;
+}
+
+html.style-6 .story-body {
+  scrollbar-color: #000 transparent;
+  border: 3px double #000;
+  padding: 42px;
+}
+
+html.style-6 .story-body input {
+  border: 3px double #000;
+  background-color: #fff;
+  color: #000;
+}
+
+html.style-6 .incomplete-bread-crumb {
+  color: #fff;
+  text-shadow: 0 0 10px #000;
 }

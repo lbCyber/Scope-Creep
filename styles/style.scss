@@ -1,12 +1,10 @@
 @import "partials/normalize";
 
-$monoFont: "Space Mono", monospace;
+$monoFont: "IBM Plex Mono", monospace;
 $sansFont: "Rubik", sans-serif;
 
 html {
   font: 125% $sansFont;
-  background-color: #050802;
-  color: #6b2;
 }
 
 img {
@@ -30,29 +28,10 @@ nav {
 
 h1 {
   position: relative;
-  text-shadow: 0 0 2px #4a2;
   text-decoration: underline overline dotted;
   max-width: 100%;
   display: inline-block;
   margin: 0 auto;
-  mix-blend-mode: screen;
-  &::after {
-    background-image: repeating-linear-gradient(
-        0deg,
-        rgba(64, 176, 32, 0) 0,
-        rgb(64, 176, 32) 3px,
-        rgba(64, 176, 32, 0) 6px
-      ),
-      radial-gradient(ellipse closest-side at 50% 60%, rgba(84, 216, 42, 0.8) 0% 5%, #162008 80%, #050802);
-    mix-blend-mode: hue;
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    background-blend-mode: color-dodge;
-    opacity: 0.2;
-  }
 }
 
 h1,
@@ -63,6 +42,7 @@ h3 {
 
 main {
   font-family: $monoFont;
+  font-weight: 500;
 }
 
 ul {
@@ -86,7 +66,7 @@ header {
 }
 
 .header-image {
-  display:flex;
+  display: flex;
 }
 
 nav {
@@ -109,42 +89,90 @@ main {
   margin: 0 auto;
 }
 
+button,
 .button {
-  background-color: limegreen;
-  color: black;
+  border-radius: 5px;
+  transition: background 0.4s;
+}
+
+.button {
   min-width: 200px;
   height: 50px;
   display: inline-block;
-  padding: .5em;
-  border-radius: 5px;
+  padding: 0.5em;
   cursor: default;
-  &:hover {
-    background-color: green;
-  }
+  margin-top:70px;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% - 10px);
+  height: 40px;
+  border: none;
+  margin: 10px 5px;
 }
 
 .story-body {
   overflow-y: scroll;
   overflow-x: hidden;
-  scrollbar-color: green transparent;
   scrollbar-width: thin;
   min-height: 400px;
   max-height: 600px;
-  border: 3px dashed rgba(84, 216, 42, 0.3);
   border-radius: 2px;
 }
 
 .story-body-text {
   min-height: calc(100% - 190px);
+  transition: opacity 0.75s;
+  opacity: 1;
+  input {
+    width: 70%;
+    text-align: center;
+    margin-left: calc(15%);
+    height: 46px;
+    font-family: $monoFont;
+  }
 }
 
-.hideOption {
-  display:none;
+.text-transition {
+  opacity: 0;
+}
+
+.hide-option {
+  display: none;
 }
 
 .choices {
+  position: relative;
   text-align: center;
-  min-height:125px;
+  min-height: 125px;
+  h3 {
+    transition: opacity 0.5s;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 10px;
+    opacity:0;
+  }
+}
+
+.option0:hover+.option0-desc {
+  opacity: 1;
+}
+
+.option1:hover+.option1-desc {
+  opacity: 1;
+}
+
+.bread-crumbs {
+  font-size: 80px;
+  text-align: center;
+}
+
+.crumb-1 {
+  padding-left: 15px;
 }
 
 footer {
@@ -152,3 +180,20 @@ footer {
   bottom: 0;
   text-align: center;
 }
+
+.caret {
+  animation: blink-caret 0.6s step-end infinite;
+  animation-fill-mode: none;
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@import "partials/colors";
