@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Rubik|IBM+Plex+Mono:500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/style.min.css">
   <title>Project 3 - Paul Rocca</title>
@@ -17,34 +18,20 @@
     <!-- This is a single-page design with no scroll, so everything goes into this single wrapper -->
     <header>
       <div class="header-image">
-        <h1>Scope Creep</h1>
+        <h1>S<span>c</span>o<span>p</span>e <span>C</span>r<span>e</span>e<span>p</span></h1>
       </div>
       <nav>
         <div class="arrow">^
         </div>
         <div class="nav-collapser">
           <ul class="main-nav-list">
-            <li>
-              <a href="">Home</a>
-            </li>
-            <li>
-              <button class="style-picker" name="style-1" aria-hidden>default</button>
-            </li>
-            <li>
-              <button class="style-picker" name="style-2" aria-hidden>ibm</button>
-            </li>
-            <li>
-              <button class="style-picker" name="style-3" aria-hidden>apple-ii</button>
-            </li>
-            <li>
-              <button class="style-picker" name="style-4" aria-hidden>commodore</button>
-            </li>
-            <li>
-              <button class="style-picker" name="style-5" aria-hidden>dos</button>
-            </li>
-            <li>
-              <button class="style-picker" name="style-6" aria-hidden>plaintext</button>
-            </li>
+            <li><a href="">Home</a></li>
+            <li><button class="style-picker" name="style-1" aria-hidden>default</button></li>
+            <li><button class="style-picker" name="style-2" aria-hidden>ibm</button></li>
+            <li><button class="style-picker" name="style-3" aria-hidden>apple-ii</button></li>
+            <li><button class="style-picker" name="style-4" aria-hidden>commodore</button></li>
+            <li><button class="style-picker" name="style-5" aria-hidden>pentium</button></li>
+            <li><button class="style-picker" name="style-6" aria-hidden>plaintext</button></li>
           </ul>
         </div>
       </nav>
@@ -53,41 +40,48 @@
       <aside>
         <div class="bread-crumbs">
           <ul>
-            <li><i class="fas fa-mug-hot incomplete-bread-crumb crumb-1"></i></li>
-            <li><i class="fas fa-bug hide-option crumb-2"></i></li>
-            <li><i class="fas fa-comment-dots hide-option crumb-3"></i></li>
+            <li><i class="fas fa-mug-hot incomplete-bread-crumb hide-option crumb-1" aria-hidden></i></li>
+            <li><i class="fas fa-bug hide-option incomplete-bread-crumb crumb-2" aria-hidden></i></li>
+            <li><i class="fas fa-comment-dots incomplete-bread-crumb hide-option crumb-3" aria-hidden></i></li>
           </ul>
         </div>
       </aside>
       <div class="story-body">
         <h2 class="story-title">Introduction</h2>
-        <div class="story-body-text">
-          <p>Story will be generated here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur
-            cumque, deserunt non cum minima quis nostrum iusto nobis molestias fugiat illo quae molestiae facere
-            cupiditate natus vitae. Harum, porro. Aliquam voluptate impedit sed. Unde debitis reiciendis rem, magnam
-            animi ad deleniti necessitatibus? Voluptas, perferendis voluptatibus molestias voluptatem repellat
-            temporibus quos alias ducimus ratione est. Similique accusantium, ipsa commodi officia facilis perferendis
-            sed quos, necessitatibus sint debitis sunt molestiae doloribus aliquid laudantium numquam! Exercitationem,
-            necessitatibus quidem! Quidem vero voluptas officiis! A qui vitae labore? Deserunt nobis omnis molestias
-            sapiente eaque dolores reprehenderit nulla debitis quas mollitia. Vero aut repellat veritatis totam enim
-            sapiente non doloremque dolorum quod reprehenderit consequuntur temporibus error sit, harum quasi laudantium
-            culpa iste debitis ea dolore. Alias esse suscipit aliquid nostrum nemo amet! Aperiam odio sunt, cupiditate
-            id consectetur ipsa aliquid, corrupti at deserunt earum quod vero, voluptatibus et dolorum error porro quasi
-            mollitia autem! Facere, reiciendis. Nesciunt explicabo repellat odit modi doloribus minima dolorem delectus.
-            Exercitationem fuga soluta consectetur inventore velit consequatur, ea explicabo nulla necessitatibus minus
-            temporibus officiis natus, qui a ullam, quae saepe! Ad deleniti quam voluptatem dolor enim voluptates esse,
-            deserunt neque veritatis repudiandae iure quas laborum qui? Similique rem assumenda aliquid!</p>
-        </div>
-        <div class="choices">
-          <p class="button option0">Begin</p>
-          <h3 class="option0-desc">Start the story</h3>
-          <p class="button option1 hide-option">Also an option</p>
-          <h3 class="option1-desc"></h3>
-        </div>
+        <form>
+          <div class="story-body-text">
+            <p>Story will be generated here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur
+              cumque, deserunt non cum minima quis nostrum iusto nobis molestias fugiat illo quae molestiae facere
+              cupiditate natus vitae. Harum, porro. Aliquam voluptate impedit sed. Unde debitis reiciendis rem, magnam
+              animi ad deleniti necessitatibus? Voluptas, perferendis voluptatibus molestias voluptatem repellat
+              temporibus quos alias ducimus ratione est. Similique accusantium, ipsa commodi officia facilis perferendis
+              sed quos, necessitatibus sint debitis sunt molestiae doloribus aliquid laudantium numquam! Exercitationem,
+              necessitatibus quidem! Quidem vero voluptas officiis! A qui vitae labore? Deserunt nobis omnis molestias
+              sapiente eaque dolores reprehenderit nulla debitis quas mollitia. Vero aut repellat veritatis totam enim
+              sapiente non doloremque dolorum quod reprehenderit consequuntur temporibus error sit, harum quasi
+              laudantium
+              culpa iste debitis ea dolore. Alias esse suscipit aliquid nostrum nemo amet! Aperiam odio sunt, cupiditate
+              id consectetur ipsa aliquid, corrupti at deserunt earum quod vero, voluptatibus et dolorum error porro
+              quasi
+              mollitia autem! Facere, reiciendis. Nesciunt explicabo repellat odit modi doloribus minima dolorem
+              delectus.
+              Exercitationem fuga soluta consectetur inventore velit consequatur, ea explicabo nulla necessitatibus
+              minus
+              temporibus officiis natus, qui a ullam, quae saepe! Ad deleniti quam voluptatem dolor enim voluptates
+              esse,
+              deserunt neque veritatis repudiandae iure quas laborum qui? Similique rem assumenda aliquid!</p>
+          </div>
+          <div class="choices">
+            <p class="button option0">Begin</p>
+            <h3 class="option0-desc">Start the story</h3>
+            <p class="button option1 hide-option"></p>
+            <h3 class="option1-desc"></h3>
+          </div>
+        </form>
       </div>
     </main>
     <footer>
-      <p>Copyright bla</p>
+      <p>Copyright &copy;2019 Paul Rocca</p>
     </footer>
   </div>
 </body>

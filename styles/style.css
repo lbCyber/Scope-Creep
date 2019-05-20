@@ -270,6 +270,7 @@ body {
 
 .body-wrapper {
   max-width: 1600px;
+  margin: 0 auto;
 }
 
 header {
@@ -283,6 +284,19 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-size: 2.5rem;
+  height: 200px;
+  max-height: 200px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header-image span {
+  -webkit-animation: title-glitch 250s step-end infinite;
+  animation: title-glitch 250s step-end infinite;
+  -webkit-animation-fill-mode: none;
+  animation-fill-mode: none;
 }
 
 nav {
@@ -319,7 +333,6 @@ button,
   display: inline-block;
   padding: 0.5em;
   cursor: default;
-  margin-top: 70px;
 }
 
 button {
@@ -336,6 +349,8 @@ button {
   height: 40px;
   border: none;
   margin: 10px 5px;
+  text-transform: uppercase;
+  font-size: 16px;
 }
 
 .story-body {
@@ -348,17 +363,19 @@ button {
 }
 
 .story-body-text {
-  min-height: calc(100% - 190px);
+  min-height: 250px;
   -webkit-transition: opacity 0.75s;
   -o-transition: opacity 0.75s;
   transition: opacity 0.75s;
   opacity: 1;
+  margin-bottom: 110px;
 }
 
 .story-body-text input {
   width: 70%;
   text-align: center;
   margin-left: calc(15%);
+  margin-top: 20px;
   height: 46px;
   font-family: "IBM Plex Mono", monospace;
 }
@@ -384,8 +401,10 @@ button {
   position: absolute;
   text-align: center;
   width: 100%;
-  top: 10px;
+  top: -60px;
   opacity: 0;
+  -webkit-text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 .option0:hover + .option0-desc {
@@ -435,6 +454,134 @@ footer {
   }
   50% {
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes title-glitch {
+  from,
+  to {
+    font-variant: normal;
+    vertical-align: unset;
+  }
+  21% {
+    font-variant: small-caps;
+  }
+  21.05% {
+    font-variant: normal;
+  }
+  35% {
+    font-variant: small-caps;
+  }
+  37% {
+    font-variant: normal;
+    vertical-align: super;
+  }
+  46% {
+    font-variant: small-caps;
+  }
+  46.05% {
+    vertical-align: unset;
+  }
+  50% {
+    font-variant: normal;
+  }
+  63% {
+    font-variant: small-caps;
+    vertical-align: super;
+  }
+  63.05% {
+    font-variant: normal;
+    vertical-align: sub;
+  }
+  63.35% {
+    font-variant: normal;
+    vertical-align: middle;
+  }
+  64% {
+    font-style: oblique;
+  }
+  65% {
+    font-style: unset;
+  }
+  80% {
+    font-variant: small-caps;
+    vertical-align: unset;
+    font-style: oblique;
+  }
+  80.01% {
+    font-variant: normal;
+    vertical-align: unset;
+    font-style: unset;
+  }
+  80.05% {
+    font-style: oblique;
+  }
+  80.1% {
+    font-style: unset;
+  }
+}
+
+@keyframes title-glitch {
+  from,
+  to {
+    font-variant: normal;
+    vertical-align: unset;
+  }
+  21% {
+    font-variant: small-caps;
+  }
+  21.05% {
+    font-variant: normal;
+  }
+  35% {
+    font-variant: small-caps;
+  }
+  37% {
+    font-variant: normal;
+    vertical-align: super;
+  }
+  46% {
+    font-variant: small-caps;
+  }
+  46.05% {
+    vertical-align: unset;
+  }
+  50% {
+    font-variant: normal;
+  }
+  63% {
+    font-variant: small-caps;
+    vertical-align: super;
+  }
+  63.05% {
+    font-variant: normal;
+    vertical-align: sub;
+  }
+  63.35% {
+    font-variant: normal;
+    vertical-align: middle;
+  }
+  64% {
+    font-style: oblique;
+  }
+  65% {
+    font-style: unset;
+  }
+  80% {
+    font-variant: small-caps;
+    vertical-align: unset;
+    font-style: oblique;
+  }
+  80.01% {
+    font-variant: normal;
+    vertical-align: unset;
+    font-style: unset;
+  }
+  80.05% {
+    font-style: oblique;
+  }
+  80.1% {
+    font-style: unset;
   }
 }
 

@@ -64,7 +64,7 @@
         ]
       },
       "part4": {
-        "text": "<p>You're working alone in the office tonight.</p><p>Alex promised this morning to be on the verge of sending you something big, and you didn't mind putting in a few extra hours. There's a virtually-unlimited supply of coffee and pizza in the breakroom, so you'd be comfortable enough.</p><p>After brewing yourself a cup of caffeine juice, you get yourself situated in front of your computer and boot it up.<span class='caret'>_</span></p> <input type='text' id='namefield' class='namefield' name='namefield' placeholder='Enter your name'><p></p>",
+        "text": "<p>You're working alone in the office tonight.</p><p>Alex promised this morning to be on the verge of sending you something big, and you didn't mind putting in a few extra hours. There's a virtually-unlimited supply of coffee and pizza in the breakroom, so you'd be comfortable enough.</p><p>After brewing yourself a cup of caffeine juice, you get yourself situated in front of your computer and boot it up.<span class='caret'>_</span></p> <input type='text' id='name-field' class='name-field' name='name-field' placeholder='Enter your name' required>",
         "image": false,
         "choice0": [
           "Login",
@@ -88,7 +88,7 @@
         ]
       },
       "part6": {
-        "text": "<p>From: Alex Brennan</p><p>To: storyMain[name]@crtech.hy</p><p>Subject: IT'S READY!!!</p><p>></p><p>Hey storyMain['name']! Thank you for staying in tonight!</p><p>I've attached a packaged file I'd like you to test out for me! It's a big one (429.66MiB), but don't worry! Most of that is documentation and other stuff to run server-side, so it shouldn't slow down anything on your end. Just extract it into the server's root node, and try calling it from a dummy page to test. No content needed, it should populate the page automatically and give you enough to work with.</p><p>I just need you to run it and try to break it. I've run it a quick couple of times already with no problems, but I need to make sure it can survive an extended run without any issues!</p><p>Keep it running, crunch its butt, and see what happens.</p><p>And let me know what you find!</p><p>-A<span class='caret'>_</span></p>",
+        "text": "<p>From: Alex Brennan</p><p>To: %name%@crtech.hy</p><p>Subject: IT'S READY!!!</p><p>></p><p>Hey %name%! Thank you for staying in tonight!</p><p>I've attached a packaged file I'd like you to test out for me! It's a big one (429.66MiB), but don't worry! Most of that is documentation and other stuff to run server-side, so it shouldn't slow down anything on your end. Just extract it into the server's root node, and try calling it from a dummy page to test. No content needed, it should populate the page automatically and give you enough to work with.</p><p>I just need you to run it and try to break it. I've run it a quick couple of times already with no problems, but I need to make sure it can survive an extended run without any issues!</p><p>Keep it running, crunch its butt, and see what happens.</p><p>And let me know what you find!</p><p>-A<span class='caret'>_</span></p>",
         "image": false,
         "choice0": [
           "next",

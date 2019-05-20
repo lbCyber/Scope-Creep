@@ -21,38 +21,55 @@ const storyMain = {
 
 $(function () {
   storyMain.grabStory();
-  $('.option0').on('click', function () {
-    breadCrumbCheck('choice0');
+
+  $('.option0').on('click', function (event) {
+    if ((storyMain.position.choice0 == 'Login') && ($('.name-field').val() !== '')) {
+      nameInput();
+    } else if ($('.name-field').val() == '') {
+      return;
+    }
+    chapterCheck('choice0');
     $.extend(storyMain.position, readChanges('choice0'));
     injectChanges();
   });
 
   $('.option1').on('click', function () {
-    breadCrumbCheck('choice1');
+    chapterCheck('choice1');
     $.extend(storyMain.position, readChanges('choice1'));
+    injectChanges();
+  });
+
+  $('form').on('submit', function (event) {
+    event.preventDefault();
+    nameInput();
+    chapterCheck('choice0');
+    $.extend(storyMain.position, readChanges('choice0'));
     injectChanges();
   });
 });
 
-const breadCrumbCheck = function (option) {
+const chapterCheck = function (option) {
   if (readChanges(option)['chapter']) {
     let crumb = readChanges(option)['chapter'];
-    if (crumb === 'chap2') {
+    if (crumb === 'chap1') {
+      $('.story-title').text('Chapter 1');
+      $('.crumb-1').removeClass('hide-option');
+    } else if (crumb === 'chap2') {
       $('.crumb-1').removeClass('incomplete-bread-crumb');
       $('.crumb-2').removeClass('hide-option');
-      $('.crumb-2').addClass('incomplete-bread-crumb');
+      $('.story-title').text('Chapter 2');
     } else if (crumb === 'chap3') {
       $('.crumb-2').removeClass('incomplete-bread-crumb');
       $('.crumb-3').removeClass('hide-option');
-      $('.crumb-3').addClass('incomplete-bread-crumb');
+      $('.story-title').text('Chapter 3');
     } else if (crumb === 'chap4') {
       $('.crumb-3').removeClass('incomplete-bread-crumb');
       $('.crumb-4').removeClass('hide-option');
-      $('.crumb-4').addClass('incomplete-bread-crumb');
+      $('.story-title').text('Chapter 4');
     } else if (crumb === 'chap5') {
       $('.crumb-4').removeClass('incomplete-bread-crumb');
       $('.crumb-5').removeClass('hide-option');
-      $('.crumb-5').addClass('incomplete-bread-crumb');
+      $('.story-title').text('Chapter 5');
     }
   }
 }
@@ -65,6 +82,13 @@ storyMain.grabStory = function () {
   }).then(function (storyData) {
     storyMain["storyData"] = storyData;
   });
+}
+
+const nameInput = function (event) {
+  let nameEntered = $('.name-field').val();
+  if (nameEntered !== '') {
+    storyMain.name = nameEntered;
+  }
 }
 
 const base = function () {
@@ -100,7 +124,7 @@ const readNewPosition = function () {
     readArray["choice1desc"] = false;
   }
   readArray["image"] = base()["image"];
-  readArray["text"] = base()["text"];
+  readArray["text"] = base()["text"].replace(/%name%/g, storyMain.name);
   return readArray;
 }
 
@@ -133,4 +157,3 @@ const injectChanges = function (choice) {
     }
   }, 750);
 }
-// {chap#}.{branch#}.{part#}.text, image, choice[0:choicetext,1:description,2:{actions}}
