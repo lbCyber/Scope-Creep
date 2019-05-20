@@ -1,30 +1,35 @@
 $default-foreground: #6b2;
 $default-dark: #251;
 $default-back: #050802;
+$default-options: #ff1493;
 $default-transparent-30: rgba(84, 216, 42, 0.3);
 $default-transparent-60: rgba(84, 216, 42, 0.6);
 
 $ibm-foreground: #f8fcff;
 $ibm-back: #012;
 $ibm-dark: #158;
+$ibm-options: #00f;
 $ibm-transparent-30: rgba(248, 252, 255, 0.3);
 $ibm-transparent-60: rgba(248, 252, 255, 0.6);
 
 $appleii-foreground: #dcc;
 $appleii-back: #211;
 $appleii-dark: #a87;
+$appleii-options: #789;
 $appleii-transparent-30: rgba(221, 204, 204, 0.3);
 $appleii-transparent-60: rgba(221, 204, 204, 0.6);
 
 $commodore-foreground: #8ff;
 $commodore-back: #26c;
-$commodore-dark: #4bb;
-$commodore-transparent-30: rgba(136,255,255,.3);
-$commodore-transparent-60: rgba(136,255,255,.6);
+$commodore-dark: #fb7;
+$commodore-options: #ff4500;
+$commodore-transparent-30: rgba(136, 255, 255, 0.1);
+$commodore-transparent-60: rgba(136, 255, 255, 0.3);
 
 $dos-foreground: #eee;
 $dos-back: #111;
 $dos-dark: #888;
+$dos-options: #708090;
 $dos-transparent-30: rgba(225, 225, 225, 0.3);
 $dos-transparent-60: rgba(225, 225, 225, 0.6);
 
@@ -42,10 +47,13 @@ html.style-1 {
   h6,
   p,
   i,
-  button {
+  button,
+  .game-options,
+  .home-button {
     background-clip: text;
     background-image: repeating-linear-gradient(0deg, transparent 0, $default-foreground 2px, transparent 3px);
   }
+
   h1,
   h2,
   h3,
@@ -55,18 +63,29 @@ html.style-1 {
     text-shadow: 0 0 1.6px $default-foreground;
     color: $default-transparent-30;
   }
+
   p,
   i {
     color: $default-transparent-60;
   }
 
-  .button, button {
+  .button,
+  button {
     background-color: $default-foreground;
     color: $default-back;
     background-clip: unset;
     &:hover {
       background-color: $default-dark;
     }
+  }
+
+  .game-options {
+    background-color: black;
+    background-clip: unset;
+  }
+
+  .game-options:hover {
+    background-color: $default-options;
   }
 
   .story-body {
@@ -76,11 +95,11 @@ html.style-1 {
       border: 2px solid $default-foreground;
       background-color: $default-back;
       color: $default-foreground;
-    }    
+    }
   }
 
   .incomplete-bread-crumb {
-    color:$default-back;
+    color: $default-back;
     text-shadow: 0 0 10px $default-foreground;
   }
 }
@@ -96,10 +115,13 @@ html.style-2 {
   h6,
   p,
   i,
-  button {
+  button,
+  .game-options,
+  .home-button {
     background-clip: text;
     background-image: repeating-linear-gradient(0deg, transparent 0, $ibm-foreground 2px, transparent 3px);
   }
+
   h1,
   h2,
   h3,
@@ -109,17 +131,29 @@ html.style-2 {
     text-shadow: 0 0 1.6px $ibm-foreground;
     color: $ibm-transparent-30;
   }
+
   p,
   i {
     color: $ibm-transparent-60;
   }
-  .button, button {
+
+  .button,
+  button {
     background-color: $ibm-foreground;
     color: $ibm-back;
     background-clip: unset;
     &:hover {
       background-color: $ibm-dark;
     }
+  }
+
+  .game-options {
+    background-color: black;
+    background-clip: unset;
+  }
+
+  .game-options:hover {
+    background-color: $ibm-options;
   }
 
   .story-body {
@@ -134,7 +168,7 @@ html.style-2 {
   }
 
   .incomplete-bread-crumb {
-    color:$ibm-back;
+    color: $ibm-back;
     text-shadow: 0 0 10px $ibm-foreground;
   }
 }
@@ -150,10 +184,13 @@ html.style-3 {
   h6,
   p,
   i,
-  button {
+  button,
+  .game-options,
+  .home-button {
     background-clip: text;
     background-image: repeating-linear-gradient(0deg, transparent 0, $appleii-foreground 2px, transparent 3px);
   }
+
   h1,
   h2,
   h3,
@@ -163,17 +200,29 @@ html.style-3 {
     text-shadow: 0 0 1.6px $appleii-foreground;
     color: $appleii-transparent-30;
   }
+
   p,
   i {
     color: $appleii-transparent-60;
   }
-  .button, button {
+
+  .button,
+  button {
     background-color: $appleii-foreground;
     color: $appleii-back;
     background-clip: unset;
     &:hover {
       background-color: $appleii-dark;
     }
+  }
+
+  .game-options {
+    background-color: black;
+    background-clip: unset;
+  }
+
+  .game-options:hover {
+    background-color: $appleii-options;
   }
 
   .story-body {
@@ -188,7 +237,7 @@ html.style-3 {
   }
 
   .incomplete-bread-crumb {
-    color:$appleii-back;
+    color: $appleii-back;
     text-shadow: 0 0 10px $appleii-foreground;
   }
 }
@@ -204,10 +253,13 @@ html.style-4 {
   h6,
   p,
   i,
-  button {
+  button,
+  .game-options,
+  .home-button {
     background-clip: text;
     background-image: repeating-linear-gradient(0deg, transparent 0, $commodore-foreground 2px, transparent 3px);
   }
+
   h1,
   h2,
   h3,
@@ -217,17 +269,29 @@ html.style-4 {
     text-shadow: 0 0 1.6px $commodore-foreground;
     color: $commodore-transparent-30;
   }
+
   p,
   i {
     color: $commodore-transparent-60;
   }
-  .button, button {
+
+  .button,
+  button {
     background-color: $commodore-foreground;
     color: $commodore-back;
     background-clip: unset;
     &:hover {
       background-color: $commodore-dark;
     }
+  }
+
+  .game-options {
+    background-color: black;
+    background-clip: unset;
+  }
+
+  .game-options:hover {
+    background-color: $commodore-options;
   }
 
   .story-body {
@@ -242,7 +306,7 @@ html.style-4 {
   }
 
   .incomplete-bread-crumb {
-    color:$commodore-back;
+    color: $commodore-back;
     text-shadow: 0 0 10px $commodore-foreground;
   }
 }
@@ -258,10 +322,13 @@ html.style-5 {
   h6,
   p,
   i,
-  button {
+  button,
+  .game-options,
+  .home-button {
     background-clip: text;
     background-image: repeating-linear-gradient(0deg, transparent 0, $dos-foreground 2px, transparent 3px);
   }
+
   h1,
   h2,
   h3,
@@ -271,17 +338,29 @@ html.style-5 {
     text-shadow: 0 0 1.6px $dos-foreground;
     color: $dos-transparent-30;
   }
+
   p,
   i {
     color: $dos-transparent-60;
   }
-  .button, button {
+
+  .button,
+  button {
     background-color: $dos-foreground;
     color: $dos-back;
     background-clip: unset;
     &:hover {
       background-color: $dos-dark;
     }
+  }
+
+  .game-options {
+    background-color: black;
+    background-clip: unset;
+  }
+
+  .game-options:hover {
+    background-color: $dos-options;
   }
 
   .story-body {
@@ -296,7 +375,7 @@ html.style-5 {
   }
 
   .incomplete-bread-crumb {
-    color:$dos-back;
+    color: $dos-back;
     text-shadow: 0 0 10px $dos-foreground;
   }
 }
@@ -305,7 +384,9 @@ html.style-6 {
   background-color: $plaintext-back;
   color: $plaintext-foreground;
 
-  .button, button {
+  .button,
+  button,
+  .game-options {
     background-color: $plaintext-foreground;
     color: $plaintext-back;
     &:hover {
@@ -327,7 +408,7 @@ html.style-6 {
   }
 
   .incomplete-bread-crumb {
-    color:$plaintext-back;
+    color: $plaintext-back;
     text-shadow: 0 0 10px $plaintext-foreground;
   }
 }

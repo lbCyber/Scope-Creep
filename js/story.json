@@ -158,7 +158,8 @@
             "chapter": "chap2",
             "branch": "branch0",
             "part": "part4"
-          }
+          },
+          "diligent"
         ]
       },
       "part4": {
@@ -260,7 +261,8 @@
             "chapter": "chap2",
             "branch": "branch1",
             "part": "part6"
-          }
+          },
+          "patient"
         ],
         "choice1": [
           "check your markup already",

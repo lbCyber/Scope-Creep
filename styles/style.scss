@@ -1,11 +1,20 @@
 @import "partials/normalize";
 
+//  VARIABLES
+
 $monoFont: "IBM Plex Mono", monospace;
 $sansFont: "Rubik", sans-serif;
+
+/* BASE STYLES  */
 
 html {
   font: 125% $sansFont;
 }
+
+body {
+  width: 100vw;
+  height: 100vh;
+} // let's do this, single page design, flexin' my muscles hnngnngrgrgrgh
 
 img {
   width: 100%;
@@ -49,56 +58,18 @@ ul {
   list-style: none;
 }
 
-body {
-  width: 100vw;
-  height: 100vh;
-} // let's do this hnngnngrgrgrgh
+/*  COMMON ELEMENTS */
 
 .body-wrapper {
   max-width: 1600px;
-  margin:0 auto;
-}
-
-header {
-  width: 60%;
   margin: 0 auto;
-  height: 20%;
-  position: relative;
-}
-
-.header-image {
   display: flex;
-  font-size: 2.5rem;
-  height: 200px;
-  max-height:200px;
-  align-items:center;
-  span {
-    animation: title-glitch 250s step-end infinite;
-    animation-fill-mode: none;
-  }
-}
-
-nav {
-  position: absolute;
-  right: -20%;
-  top: 0;
-  width: 20%;
-}
-
-aside {
-  position: absolute;
-  height: 70%;
-  left: 0;
-  top: 15%;
-  width: 20%;
-}
-
-main {
-  width: 60%;
-  margin: 0 auto;
+  height: 100%;
+  flex-wrap: wrap;
 }
 
 button,
+.game-options,
 .button {
   border-radius: 5px;
   transition: background 0.4s;
@@ -112,7 +83,8 @@ button,
   cursor: default;
 }
 
-button {
+button,
+.game-options {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,6 +96,112 @@ button {
   font-size: 16px;
 }
 
+.caret {
+  animation: blink-caret 0.6s step-end infinite;
+  animation-fill-mode: none;
+}
+
+/*  HEADER  */
+
+header {
+  width: 100%;
+  margin: 0 auto;
+  height: 20%;
+  position: relative;
+  display: flex;
+}
+
+.header-image {
+  display: flex;
+  width: 100%;
+  font-size: 2.5rem;
+  height: 200px;
+  max-height: 200px;
+  align-items: center;
+  span {
+    animation: title-glitch 250s step-end infinite;
+    animation-fill-mode: none;
+  }
+}
+
+nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20%;
+}
+
+.home-button {
+  text-decoration: none;
+  text-align: center;
+  height: 50px;
+  font-family: $monoFont;
+  width: 100%;
+  margin-bottom:50px;
+  border:5px solid rgba(0,0,0,.3);
+  box-shadow: 0 0 1px 1px rgba(0,0,0,.3);
+  padding:.4em;
+  text-transform: uppercase;
+}
+
+.main-nav-list {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: -400px;
+  width: 100%;
+  opacity: 0;
+  transition: top 0.5s, opacity 0.8s;
+  h6 {
+    text-align:center;
+  }
+}
+
+.game-options {
+  color: #fff;
+  z-index: 10;
+  position: relative;
+}
+
+.game-options-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  &:checked + .main-nav-list {
+    opacity: 1;
+    top: 80px;
+  }
+}
+
+/*  BREAD CRUMB ASIDE */
+
+aside {
+  position: absolute;
+  height: 70%;
+  left: 0;
+  top: 15%;
+  width: 20%;
+}
+
+.bread-crumbs {
+  font-size: 80px;
+  text-align: center;
+}
+
+.crumb-1 {
+  padding-left: 15px;
+}
+
+/*  MAIN BODY */
+
+main {
+  width: 60%;
+  margin: 0 20%;
+}
+
 .story-body {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -133,27 +211,23 @@ button {
   border-radius: 2px;
 }
 
+.main-nav-list li {
+  min-width: 150px;
+}
+
 .story-body-text {
   min-height: 250px;
   transition: opacity 0.75s;
   opacity: 1;
-  margin-bottom:110px;
+  margin-bottom: 110px;
   input {
     width: 70%;
     text-align: center;
     margin-left: calc(15%);
-    margin-top:20px;
+    margin-top: 20px;
     height: 46px;
     font-family: $monoFont;
   }
-}
-
-.text-transition {
-  opacity: 0;
-}
-
-.hide-option {
-  display: none;
 }
 
 .choices {
@@ -179,25 +253,16 @@ button {
   opacity: 1;
 }
 
-.bread-crumbs {
-  font-size: 80px;
-  text-align: center;
-}
-
-.crumb-1 {
-  padding-left: 15px;
-}
+/*  FOOTER  */
 
 footer {
   position: relative;
   bottom: 0;
   text-align: center;
+  width: 100%;
 }
 
-.caret {
-  animation: blink-caret 0.6s step-end infinite;
-  animation-fill-mode: none;
-}
+/*  ANIMATION KEY FRAMES  */
 
 @keyframes blink-caret {
   from,
@@ -215,62 +280,74 @@ footer {
     font-variant: normal;
     vertical-align: unset;
   }
-  21% {
+  31% {
     font-variant: small-caps;
   }
-  21.05% {
+  31.05% {
     font-variant: normal;
   }
-  35% {
+  45% {
     font-variant: small-caps;
   }
-  37% {
+  47% {
     font-variant: normal;
     vertical-align: super;
   }
-  46% {
+  56% {
     font-variant: small-caps;
   }
-  46.05% {
-    vertical-align:unset;
+  56.05% {
+    vertical-align: unset;
   }
-  50% {
+  60% {
     font-variant: normal;
   }
-  63% {
+  73% {
     font-variant: small-caps;
     vertical-align: super;
   }
-  63.05% {
+  73.05% {
     font-variant: normal;
     vertical-align: sub;
   }
-  63.35% {
+  73.35% {
     font-variant: normal;
     vertical-align: middle;
   }
-  64% {
-    font-style:oblique;
+  74% {
+    font-style: oblique;
   }
-  65% {
-    font-style:unset;
+  75% {
+    font-style: unset;
   }
-  80% {
+  99% {
     font-variant: small-caps;
     vertical-align: unset;
-    font-style:oblique;
+    font-style: oblique;
   }
-  80.01% {
+  99.01% {
     font-variant: normal;
     vertical-align: unset;
-    font-style:unset;
+    font-style: unset;
   }
-  80.05% {
-    font-style:oblique;
+  99.5% {
+    font-style: oblique;
   }
-  80.1% {
-    font-style:unset;
+  100% {
+    font-style: unset;
   }
 }
 
+// OTHER IMPORTS
+
 @import "partials/colors";
+
+/* ABSOLUTE OVERRIDES */
+
+.text-transition {
+  opacity: 0;
+}
+
+.hide-option {
+  display: none;
+}

@@ -217,8 +217,14 @@ template {
   height: 0;
 }
 
+/* BASE STYLES  */
 html {
   font: 125% "Rubik", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
 }
 
 img {
@@ -263,63 +269,20 @@ ul {
   list-style: none;
 }
 
-body {
-  width: 100vw;
-  height: 100vh;
-}
-
+/*  COMMON ELEMENTS */
 .body-wrapper {
   max-width: 1600px;
   margin: 0 auto;
-}
-
-header {
-  width: 60%;
-  margin: 0 auto;
-  height: 20%;
-  position: relative;
-}
-
-.header-image {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  font-size: 2.5rem;
-  height: 200px;
-  max-height: 200px;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.header-image span {
-  -webkit-animation: title-glitch 250s step-end infinite;
-  animation: title-glitch 250s step-end infinite;
-  -webkit-animation-fill-mode: none;
-  animation-fill-mode: none;
-}
-
-nav {
-  position: absolute;
-  right: -20%;
-  top: 0;
-  width: 20%;
-}
-
-aside {
-  position: absolute;
-  height: 70%;
-  left: 0;
-  top: 15%;
-  width: 20%;
-}
-
-main {
-  width: 60%;
-  margin: 0 auto;
+  height: 100%;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 button,
+.game-options,
 .button {
   border-radius: 5px;
   -webkit-transition: background 0.4s;
@@ -335,7 +298,8 @@ button,
   cursor: default;
 }
 
-button {
+button,
+.game-options {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -353,6 +317,130 @@ button {
   font-size: 16px;
 }
 
+.caret {
+  -webkit-animation: blink-caret 0.6s step-end infinite;
+  animation: blink-caret 0.6s step-end infinite;
+  -webkit-animation-fill-mode: none;
+  animation-fill-mode: none;
+}
+
+/*  HEADER  */
+header {
+  width: 100%;
+  margin: 0 auto;
+  height: 20%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  font-size: 2.5rem;
+  height: 200px;
+  max-height: 200px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header-image span {
+  -webkit-animation: title-glitch 250s step-end infinite;
+  animation: title-glitch 250s step-end infinite;
+  -webkit-animation-fill-mode: none;
+  animation-fill-mode: none;
+}
+
+nav {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20%;
+}
+
+.home-button {
+  text-decoration: none;
+  text-align: center;
+  height: 50px;
+  font-family: "IBM Plex Mono", monospace;
+  width: 100%;
+  margin-bottom: 50px;
+  border: 5px solid rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
+  padding: .4em;
+  text-transform: uppercase;
+}
+
+.main-nav-list {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: absolute;
+  top: -400px;
+  width: 100%;
+  opacity: 0;
+  -webkit-transition: top 0.5s, opacity 0.8s;
+  -o-transition: top 0.5s, opacity 0.8s;
+  transition: top 0.5s, opacity 0.8s;
+}
+
+.main-nav-list h6 {
+  text-align: center;
+}
+
+.game-options {
+  color: #fff;
+  z-index: 10;
+  position: relative;
+}
+
+.game-options-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.game-options-checkbox:checked + .main-nav-list {
+  opacity: 1;
+  top: 80px;
+}
+
+/*  BREAD CRUMB ASIDE */
+aside {
+  position: absolute;
+  height: 70%;
+  left: 0;
+  top: 15%;
+  width: 20%;
+}
+
+.bread-crumbs {
+  font-size: 80px;
+  text-align: center;
+}
+
+.crumb-1 {
+  padding-left: 15px;
+}
+
+/*  MAIN BODY */
+main {
+  width: 60%;
+  margin: 0 20%;
+}
+
 .story-body {
   overflow-y: scroll;
   overflow-x: hidden;
@@ -360,6 +448,10 @@ button {
   min-height: 400px;
   max-height: 600px;
   border-radius: 2px;
+}
+
+.main-nav-list li {
+  min-width: 150px;
 }
 
 .story-body-text {
@@ -378,14 +470,6 @@ button {
   margin-top: 20px;
   height: 46px;
   font-family: "IBM Plex Mono", monospace;
-}
-
-.text-transition {
-  opacity: 0;
-}
-
-.hide-option {
-  display: none;
 }
 
 .choices {
@@ -415,28 +499,15 @@ button {
   opacity: 1;
 }
 
-.bread-crumbs {
-  font-size: 80px;
-  text-align: center;
-}
-
-.crumb-1 {
-  padding-left: 15px;
-}
-
+/*  FOOTER  */
 footer {
   position: relative;
   bottom: 0;
   text-align: center;
+  width: 100%;
 }
 
-.caret {
-  -webkit-animation: blink-caret 0.6s step-end infinite;
-  animation: blink-caret 0.6s step-end infinite;
-  -webkit-animation-fill-mode: none;
-  animation-fill-mode: none;
-}
-
+/*  ANIMATION KEY FRAMES  */
 @-webkit-keyframes blink-caret {
   from,
   to {
@@ -446,7 +517,6 @@ footer {
     opacity: 1;
   }
 }
-
 @keyframes blink-caret {
   from,
   to {
@@ -463,60 +533,60 @@ footer {
     font-variant: normal;
     vertical-align: unset;
   }
-  21% {
+  31% {
     font-variant: small-caps;
   }
-  21.05% {
+  31.05% {
     font-variant: normal;
   }
-  35% {
+  45% {
     font-variant: small-caps;
   }
-  37% {
+  47% {
     font-variant: normal;
     vertical-align: super;
   }
-  46% {
+  56% {
     font-variant: small-caps;
   }
-  46.05% {
+  56.05% {
     vertical-align: unset;
   }
-  50% {
+  60% {
     font-variant: normal;
   }
-  63% {
+  73% {
     font-variant: small-caps;
     vertical-align: super;
   }
-  63.05% {
+  73.05% {
     font-variant: normal;
     vertical-align: sub;
   }
-  63.35% {
+  73.35% {
     font-variant: normal;
     vertical-align: middle;
   }
-  64% {
+  74% {
     font-style: oblique;
   }
-  65% {
+  75% {
     font-style: unset;
   }
-  80% {
+  99% {
     font-variant: small-caps;
     vertical-align: unset;
     font-style: oblique;
   }
-  80.01% {
+  99.01% {
     font-variant: normal;
     vertical-align: unset;
     font-style: unset;
   }
-  80.05% {
+  99.5% {
     font-style: oblique;
   }
-  80.1% {
+  100% {
     font-style: unset;
   }
 }
@@ -527,60 +597,60 @@ footer {
     font-variant: normal;
     vertical-align: unset;
   }
-  21% {
+  31% {
     font-variant: small-caps;
   }
-  21.05% {
+  31.05% {
     font-variant: normal;
   }
-  35% {
+  45% {
     font-variant: small-caps;
   }
-  37% {
+  47% {
     font-variant: normal;
     vertical-align: super;
   }
-  46% {
+  56% {
     font-variant: small-caps;
   }
-  46.05% {
+  56.05% {
     vertical-align: unset;
   }
-  50% {
+  60% {
     font-variant: normal;
   }
-  63% {
+  73% {
     font-variant: small-caps;
     vertical-align: super;
   }
-  63.05% {
+  73.05% {
     font-variant: normal;
     vertical-align: sub;
   }
-  63.35% {
+  73.35% {
     font-variant: normal;
     vertical-align: middle;
   }
-  64% {
+  74% {
     font-style: oblique;
   }
-  65% {
+  75% {
     font-style: unset;
   }
-  80% {
+  99% {
     font-variant: small-caps;
     vertical-align: unset;
     font-style: oblique;
   }
-  80.01% {
+  99.01% {
     font-variant: normal;
     vertical-align: unset;
     font-style: unset;
   }
-  80.05% {
+  99.5% {
     font-style: oblique;
   }
-  80.1% {
+  100% {
     font-style: unset;
   }
 }
@@ -598,7 +668,9 @@ html.style-1 h5,
 html.style-1 h6,
 html.style-1 p,
 html.style-1 i,
-html.style-1 button {
+html.style-1 button,
+html.style-1 .game-options,
+html.style-1 .home-button {
   -webkit-background-clip: text;
   background-clip: text;
   background-image: -webkit-repeating-linear-gradient(bottom, transparent 0, #6b2 2px, transparent 3px);
@@ -621,14 +693,25 @@ html.style-1 i {
   color: rgba(84, 216, 42, 0.6);
 }
 
-html.style-1 .button, html.style-1 button {
+html.style-1 .button,
+html.style-1 button {
   background-color: #6b2;
   color: #050802;
   background-clip: unset;
 }
 
-html.style-1 .button:hover, html.style-1 button:hover {
+html.style-1 .button:hover,
+html.style-1 button:hover {
   background-color: #251;
+}
+
+html.style-1 .game-options {
+  background-color: black;
+  background-clip: unset;
+}
+
+html.style-1 .game-options:hover {
+  background-color: #ff1493;
 }
 
 html.style-1 .story-body {
@@ -660,7 +743,9 @@ html.style-2 h5,
 html.style-2 h6,
 html.style-2 p,
 html.style-2 i,
-html.style-2 button {
+html.style-2 button,
+html.style-2 .game-options,
+html.style-2 .home-button {
   -webkit-background-clip: text;
   background-clip: text;
   background-image: -webkit-repeating-linear-gradient(bottom, transparent 0, #f8fcff 2px, transparent 3px);
@@ -683,14 +768,25 @@ html.style-2 i {
   color: rgba(248, 252, 255, 0.6);
 }
 
-html.style-2 .button, html.style-2 button {
+html.style-2 .button,
+html.style-2 button {
   background-color: #f8fcff;
   color: #012;
   background-clip: unset;
 }
 
-html.style-2 .button:hover, html.style-2 button:hover {
+html.style-2 .button:hover,
+html.style-2 button:hover {
   background-color: #158;
+}
+
+html.style-2 .game-options {
+  background-color: black;
+  background-clip: unset;
+}
+
+html.style-2 .game-options:hover {
+  background-color: #00f;
 }
 
 html.style-2 .story-body {
@@ -723,7 +819,9 @@ html.style-3 h5,
 html.style-3 h6,
 html.style-3 p,
 html.style-3 i,
-html.style-3 button {
+html.style-3 button,
+html.style-3 .game-options,
+html.style-3 .home-button {
   -webkit-background-clip: text;
   background-clip: text;
   background-image: -webkit-repeating-linear-gradient(bottom, transparent 0, #dcc 2px, transparent 3px);
@@ -746,14 +844,25 @@ html.style-3 i {
   color: rgba(221, 204, 204, 0.6);
 }
 
-html.style-3 .button, html.style-3 button {
+html.style-3 .button,
+html.style-3 button {
   background-color: #dcc;
   color: #211;
   background-clip: unset;
 }
 
-html.style-3 .button:hover, html.style-3 button:hover {
+html.style-3 .button:hover,
+html.style-3 button:hover {
   background-color: #a87;
+}
+
+html.style-3 .game-options {
+  background-color: black;
+  background-clip: unset;
+}
+
+html.style-3 .game-options:hover {
+  background-color: #789;
 }
 
 html.style-3 .story-body {
@@ -786,7 +895,9 @@ html.style-4 h5,
 html.style-4 h6,
 html.style-4 p,
 html.style-4 i,
-html.style-4 button {
+html.style-4 button,
+html.style-4 .game-options,
+html.style-4 .home-button {
   -webkit-background-clip: text;
   background-clip: text;
   background-image: -webkit-repeating-linear-gradient(bottom, transparent 0, #8ff 2px, transparent 3px);
@@ -801,32 +912,43 @@ html.style-4 h4,
 html.style-4 h5,
 html.style-4 h6 {
   text-shadow: 0 0 1.6px #8ff;
-  color: rgba(136, 255, 255, 0.3);
+  color: rgba(136, 255, 255, 0.1);
 }
 
 html.style-4 p,
 html.style-4 i {
-  color: rgba(136, 255, 255, 0.6);
+  color: rgba(136, 255, 255, 0.3);
 }
 
-html.style-4 .button, html.style-4 button {
+html.style-4 .button,
+html.style-4 button {
   background-color: #8ff;
   color: #26c;
   background-clip: unset;
 }
 
-html.style-4 .button:hover, html.style-4 button:hover {
-  background-color: #4bb;
+html.style-4 .button:hover,
+html.style-4 button:hover {
+  background-color: #fb7;
+}
+
+html.style-4 .game-options {
+  background-color: black;
+  background-clip: unset;
+}
+
+html.style-4 .game-options:hover {
+  background-color: #ff4500;
 }
 
 html.style-4 .story-body {
   scrollbar-color: #8ff transparent;
-  border: 35px solid rgba(136, 255, 255, 0.3);
+  border: 35px solid rgba(136, 255, 255, 0.1);
   padding: 10px;
 }
 
 html.style-4 .story-body input {
-  border: 3px solid rgba(136, 255, 255, 0.3);
+  border: 3px solid rgba(136, 255, 255, 0.1);
   background-color: #26c;
   color: #8ff;
 }
@@ -849,7 +971,9 @@ html.style-5 h5,
 html.style-5 h6,
 html.style-5 p,
 html.style-5 i,
-html.style-5 button {
+html.style-5 button,
+html.style-5 .game-options,
+html.style-5 .home-button {
   -webkit-background-clip: text;
   background-clip: text;
   background-image: -webkit-repeating-linear-gradient(bottom, transparent 0, #eee 2px, transparent 3px);
@@ -872,14 +996,25 @@ html.style-5 i {
   color: rgba(225, 225, 225, 0.6);
 }
 
-html.style-5 .button, html.style-5 button {
+html.style-5 .button,
+html.style-5 button {
   background-color: #eee;
   color: #111;
   background-clip: unset;
 }
 
-html.style-5 .button:hover, html.style-5 button:hover {
+html.style-5 .button:hover,
+html.style-5 button:hover {
   background-color: #888;
+}
+
+html.style-5 .game-options {
+  background-color: black;
+  background-clip: unset;
+}
+
+html.style-5 .game-options:hover {
+  background-color: #708090;
 }
 
 html.style-5 .story-body {
@@ -904,12 +1039,16 @@ html.style-6 {
   color: #000;
 }
 
-html.style-6 .button, html.style-6 button {
+html.style-6 .button,
+html.style-6 button,
+html.style-6 .game-options {
   background-color: #000;
   color: #fff;
 }
 
-html.style-6 .button:hover, html.style-6 button:hover {
+html.style-6 .button:hover,
+html.style-6 button:hover,
+html.style-6 .game-options:hover {
   background-color: #fff;
   color: #000;
   -webkit-box-shadow: 0 0 0 2px #000;
@@ -931,4 +1070,13 @@ html.style-6 .story-body input {
 html.style-6 .incomplete-bread-crumb {
   color: #fff;
   text-shadow: 0 0 10px #000;
+}
+
+/* ABSOLUTE OVERRIDES */
+.text-transition {
+  opacity: 0;
+}
+
+.hide-option {
+  display: none;
 }

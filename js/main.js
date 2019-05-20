@@ -15,7 +15,7 @@ const storyMain = {
     choice1desc: ""
   },
   name: "",
-  choices: {},
+  choices: [],
   state: 0
 }
 
@@ -84,10 +84,10 @@ storyMain.grabStory = function () {
   });
 }
 
-const nameInput = function (event) {
+const nameInput = function () {
   let nameEntered = $('.name-field').val();
   if (nameEntered !== '') {
-    storyMain.name = nameEntered;
+    storyMain.name = smartAssDetector(nameEntered);
   }
 }
 
@@ -108,6 +108,9 @@ const refreshPosition = function () {
 const readChanges = function (choice) {
   refreshPosition();
   changes = base()[choice][2];
+  if (base()[choice][3] !== undefined) {
+    storyMain["choices"].push(base()[choice][3])
+  }
   return changes;
 }
 
@@ -130,6 +133,15 @@ const readNewPosition = function () {
 
 const initChanges = function () {
   $.extend(storyMain.position, readNewPosition());
+}
+
+const smartAssDetector = function (dumbname) {
+  if ((dumbname == 'fuck') || (dumbname == 'ass') || (dumbname == 'shit') || (dumbname == 'dumb') || (dumbname == 'penis') || (dumbname == 'bepis') || (dumbname == 'douchebag')) {
+    storyMain['choices'].push('smartass');
+    return 'Garfield';
+  } else {
+    return dumbname;
+  }
 }
 
 const injectChanges = function (choice) {
