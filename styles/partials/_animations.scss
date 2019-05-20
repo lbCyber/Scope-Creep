@@ -1,0 +1,75 @@
+/*  ANIMATION KEY FRAMES  */
+
+@keyframes blink-caret {
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes title-glitch {
+  from,
+  to {
+    font-variant: normal;
+    vertical-align: unset;
+  }
+  31% {
+    font-variant: small-caps;
+  }
+  31.05% {
+    font-variant: normal;
+  }
+  45% {
+    font-variant: small-caps;
+  }
+  47% {
+    font-variant: normal;
+    vertical-align: super;
+  }
+  56% {
+    font-variant: small-caps;
+  }
+  56.05% {
+    vertical-align: unset;
+  }
+  60% {
+    font-variant: normal;
+  }
+  73% {
+    font-variant: small-caps;
+    vertical-align: super;
+  }
+  73.05% {
+    font-variant: normal;
+    vertical-align: sub;
+  }
+  73.35% {
+    font-variant: normal;
+    vertical-align: middle;
+  }
+  74% {
+    font-style: oblique;
+  }
+  75% {
+    font-style: unset;
+  }
+  99% {
+    font-variant: small-caps;
+    vertical-align: unset;
+    font-style: oblique;
+  }
+  99.01% {
+    font-variant: normal;
+    vertical-align: unset;
+    font-style: unset;
+  }
+  99.5% {
+    font-style: oblique;
+  }
+  100% {
+    font-style: unset;
+  }
+}

@@ -14,6 +14,7 @@ html {
 body {
   width: 100vw;
   height: 100vh;
+  overflow-x: hidden;
 } // let's do this, single page design, flexin' my muscles hnngnngrgrgrgh
 
 img {
@@ -52,6 +53,7 @@ h3 {
 main {
   font-family: $monoFont;
   font-weight: 500;
+  display: flex;
 }
 
 ul {
@@ -64,8 +66,10 @@ ul {
   max-width: 1600px;
   margin: 0 auto;
   display: flex;
-  height: 100%;
+  height: calc(100% - 55px);
   flex-wrap: wrap;
+  overflow: hidden;
+  min-height: 600px;
 }
 
 button,
@@ -106,9 +110,10 @@ button,
 header {
   width: 100%;
   margin: 0 auto;
-  height: 20%;
+  height: 200px;
   position: relative;
   display: flex;
+  pointer-events: none;
 }
 
 .header-image {
@@ -118,61 +123,10 @@ header {
   height: 200px;
   max-height: 200px;
   align-items: center;
+  user-select:none;
   span {
     animation: title-glitch 250s step-end infinite;
     animation-fill-mode: none;
-  }
-}
-
-nav {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 20%;
-}
-
-.home-button {
-  text-decoration: none;
-  text-align: center;
-  height: 50px;
-  font-family: $monoFont;
-  width: 100%;
-  margin-bottom:50px;
-  border:5px solid rgba(0,0,0,.3);
-  box-shadow: 0 0 1px 1px rgba(0,0,0,.3);
-  padding:.4em;
-  text-transform: uppercase;
-}
-
-.main-nav-list {
-  padding-left: 20px;
-  padding-right: 20px;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: -400px;
-  width: 100%;
-  opacity: 0;
-  transition: top 0.5s, opacity 0.8s;
-  h6 {
-    text-align:center;
-  }
-}
-
-.game-options {
-  color: #fff;
-  z-index: 10;
-  position: relative;
-}
-
-.game-options-checkbox {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  &:checked + .main-nav-list {
-    opacity: 1;
-    top: 80px;
   }
 }
 
@@ -184,6 +138,7 @@ aside {
   left: 0;
   top: 15%;
   width: 20%;
+  overflow: hidden;
 }
 
 .bread-crumbs {
@@ -198,17 +153,33 @@ aside {
 /*  MAIN BODY */
 
 main {
-  width: 60%;
-  margin: 0 20%;
+  width: 75%;
+  margin: 0 5% 0 20%;
+  height: calc(100% - 255px);
+  flex-direction: column;
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
+form {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .story-body {
   overflow-y: scroll;
   overflow-x: hidden;
   scrollbar-width: thin;
-  min-height: 400px;
-  max-height: 600px;
+  min-height: 250px;
+  max-height: 650px;
+  margin-bottom: 30px;
   border-radius: 2px;
+  width: 100%;
+  transition: opacity 0.75s;
+  opacity: 1;
 }
 
 .main-nav-list li {
@@ -216,10 +187,6 @@ main {
 }
 
 .story-body-text {
-  min-height: 250px;
-  transition: opacity 0.75s;
-  opacity: 1;
-  margin-bottom: 110px;
   input {
     width: 70%;
     text-align: center;
@@ -230,10 +197,16 @@ main {
   }
 }
 
+.choice0, .choice1 {
+  display:inline-block;
+}
+
 .choices {
   position: relative;
   text-align: center;
-  min-height: 125px;
+  min-height: 100px;
+  margin-top: 80px;
+  user-select:none;
   h3 {
     transition: opacity 0.5s;
     position: absolute;
@@ -242,15 +215,20 @@ main {
     top: -60px;
     opacity: 0;
     text-decoration: underline dotted;
+    cursor: default;
+    pointer-events: none;
+    left:0;
   }
 }
 
-.option0:hover + .option0-desc {
+.choice0:hover > .option0-desc,
+.choice1:hover > .option1-desc {
   opacity: 1;
 }
 
-.option1:hover + .option1-desc {
-  opacity: 1;
+.choice0:hover + .choice1 > .show-description,
+.option1:hover + .choice0 > .show-description {
+  opacity:0;
 }
 
 /*  FOOTER  */
@@ -260,94 +238,97 @@ footer {
   bottom: 0;
   text-align: center;
   width: 100%;
+  align-self: flex-end;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 990;
+  font-size: 0.8rem;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/*  ANIMATION KEY FRAMES  */
+nav {
+  position: absolute;
+  left:0;
+  width: 300px;
+  padding: 10px;
+  z-index: 999;
+  min-height:90px;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  justify-content: flex-end;
+  z-index: -2;
+}
 
-@keyframes blink-caret {
-  from,
-  to {
-    opacity: 0;
+.home-button {
+  text-decoration: none;
+  text-align: center;
+  height: 50px;
+  font-family: $monoFont;
+  width: 100%;
+  margin-bottom: 50px;
+  border: 5px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.3);
+  padding: 0.7em;
+  text-transform: uppercase;
+}
+
+.main-nav-list {
+  height:0;
+  overflow:hidden;
+  bottom:0;
+  padding: 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: calc(100% - 20px);
+  opacity: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: height 0.5s, opacity 0.2s;
+  border-radius: 10px 10px 0 0;
+  z-index: -1;
+  h6 {
+    text-align: center;
+    font-size: 0.8rem;
   }
-  50% {
-    opacity: 1;
+  & li:nth-child(2) {
+    background-color: rgba(0,0,0,0.7);
+    height: 2em;
+    padding-top: 0.4em;
+    border-radius: 40px;
   }
 }
 
-@keyframes title-glitch {
-  from,
-  to {
-    font-variant: normal;
-    vertical-align: unset;
-  }
-  31% {
-    font-variant: small-caps;
-  }
-  31.05% {
-    font-variant: normal;
-  }
-  45% {
-    font-variant: small-caps;
-  }
-  47% {
-    font-variant: normal;
-    vertical-align: super;
-  }
-  56% {
-    font-variant: small-caps;
-  }
-  56.05% {
-    vertical-align: unset;
-  }
-  60% {
-    font-variant: normal;
-  }
-  73% {
-    font-variant: small-caps;
-    vertical-align: super;
-  }
-  73.05% {
-    font-variant: normal;
-    vertical-align: sub;
-  }
-  73.35% {
-    font-variant: normal;
-    vertical-align: middle;
-  }
-  74% {
-    font-style: oblique;
-  }
-  75% {
-    font-style: unset;
-  }
-  99% {
-    font-variant: small-caps;
-    vertical-align: unset;
-    font-style: oblique;
-  }
-  99.01% {
-    font-variant: normal;
-    vertical-align: unset;
-    font-style: unset;
-  }
-  99.5% {
-    font-style: oblique;
-  }
-  100% {
-    font-style: unset;
-  }
+.game-options-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  top: -5000px;
+}
+
+.game-options {
+  color: #fff;
+  position: relative;
+  top: 15px;
+  z-index: 998;
+}
+
+.game-options-checkbox:checked + .main-nav-list {
+  opacity: 1;
+  height: 580px;
+  z-index: 997;
 }
 
 // OTHER IMPORTS
 
+@import "partials/animations";
 @import "partials/colors";
-
-/* ABSOLUTE OVERRIDES */
-
-.text-transition {
-  opacity: 0;
-}
-
-.hide-option {
-  display: none;
-}
+@import "partials/1600";
+@import "partials/1280";
+@import "partials/1024";
+@import "partials/768";
+@import "partials/420";
+@import "partials/absoluteOverrides"

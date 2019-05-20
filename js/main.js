@@ -1,6 +1,9 @@
 let currentChapter = "";
 let currentBranch = "";
 let currentPart = "";
+let doubleTap = false;
+let activeChoice = "";
+let mobileState = 0;
 
 const storyMain = {
   position: {
@@ -15,28 +18,44 @@ const storyMain = {
     choice1desc: ""
   },
   name: "",
+  nameclean: "",
+  firstname: "",
   choices: [],
   state: 0
 }
 
 $(function () {
   storyMain.grabStory();
-
-  $('.option0').on('click', function (event) {
-    if ((storyMain.position.choice0 == 'Login') && ($('.name-field').val() !== '')) {
-      nameInput();
-    } else if ($('.name-field').val() == '') {
-      return;
+  $('.option0').on('click', function () {
+    mobileCheck('0')
+    if (mobileState != 1) {
+      if ((storyMain.position.choice0 == 'Login') && ($('.name-field').val() !== '')) {
+        nameInput();
+      } else if ($('.name-field').val() == '') {
+        return;
+      }
+      chapterCheck('choice0');
+      $.extend(storyMain.position, readChanges('choice0'));
+      injectChanges();
+      mobileState = 0;
+      $('.show-description').removeClass('show-description')
+    } else {
+      $('.option1-desc').removeClass('show-description');
+      $('.option0-desc').addClass('show-description');
     }
-    chapterCheck('choice0');
-    $.extend(storyMain.position, readChanges('choice0'));
-    injectChanges();
   });
-
   $('.option1').on('click', function () {
-    chapterCheck('choice1');
-    $.extend(storyMain.position, readChanges('choice1'));
-    injectChanges();
+    mobileCheck('1')
+    if (mobileState != 1) {
+      chapterCheck('choice1');
+      $.extend(storyMain.position, readChanges('choice1'));
+      injectChanges();
+      mobileState = 0;
+      $('.show-description').removeClass('show-description')
+    } else {
+      $('.option0-desc').removeClass('show-description');
+      $('.option1-desc').addClass('show-description');
+    }
   });
 
   $('form').on('submit', function (event) {
@@ -84,10 +103,34 @@ storyMain.grabStory = function () {
   });
 }
 
+const mobileCheck = function (choice) {
+  let clientWidth = window.innerWidth;
+  if (clientWidth < 769) {
+    if (!doubleTap) {
+      doubleTap = true;
+      activeChoice = choice;
+      mobileState = 1;
+    } else if (doubleTap && (activeChoice == choice)) {
+      doubleTap = false;
+      mobileState = 2;
+      activeChoice = "";
+    } else {
+      doubleTap = false;
+      activeChoice = "";
+      mobileState = 1
+    }
+  } else {
+    mobileState = 0;
+    activeChoice = "";
+  }
+}
+
 const nameInput = function () {
-  let nameEntered = $('.name-field').val();
+  let nameEntered = smartAssDetector($('.name-field').val());
   if (nameEntered !== '') {
-    storyMain.name = smartAssDetector(nameEntered);
+    storyMain.name = capitalizeInput(nameEntered);
+    storyMain.nameclean = nameEntered.replace(/[\[\]'.,\/#!$%\^&\*;:0-9{}=\-_`~()\s]/g, '').toLowerCase();
+    storyMain.firstname = capitalizeInput(nameEntered.replace(/\s.*/, ''));
   }
 }
 
@@ -98,6 +141,13 @@ const base = function () {
 const currentBase = function () {
   return storyMain.position;
 };
+
+const capitalizeInput = function (input) {
+  capitalizer = function (c) {
+    return c.toUpperCase();
+  }
+  return input.replace(/^\w/, capitalizer(input.charAt(0)));
+}
 
 const refreshPosition = function () {
   currentChapter = storyMain.position.chapter;
@@ -127,7 +177,7 @@ const readNewPosition = function () {
     readArray["choice1desc"] = false;
   }
   readArray["image"] = base()["image"];
-  readArray["text"] = base()["text"].replace(/%name%/g, storyMain.name);
+  readArray["text"] = base()["text"].replace(/%name%/g, storyMain.name).replace(/%nameclean%/g, storyMain.nameclean).replace(/%firstname%/g, storyMain.firstname);
   return readArray;
 }
 
@@ -136,9 +186,9 @@ const initChanges = function () {
 }
 
 const smartAssDetector = function (dumbname) {
-  if ((dumbname == 'fuck') || (dumbname == 'ass') || (dumbname == 'shit') || (dumbname == 'dumb') || (dumbname == 'penis') || (dumbname == 'bepis') || (dumbname == 'douchebag')) {
+  if ((dumbname == 'fuck') || (dumbname == 'ass') || (dumbname == 'shit') || (dumbname == 'dumb') || (dumbname == 'penis') || (dumbname == 'bepis') || (dumbname == 'douchebag') || (dumbname == 'butt')) {
     storyMain['choices'].push('smartass');
-    return 'Garfield';
+    return 'Jon Arbuckle';
   } else {
     return dumbname;
   }
@@ -146,11 +196,11 @@ const smartAssDetector = function (dumbname) {
 
 const injectChanges = function (choice) {
   initChanges();
-  $('.story-body-text').addClass('text-transition');
-  $('.story-body').animate({ scrollTop: 0 }, 100);
+  $('.story-body').addClass('text-transition');
   setTimeout(function () {
+    $('.story-body').animate({ scrollTop: 0 }, 10);
     $('.story-body-text').html(storyMain.position.text);
-    $('.story-body-text').removeClass('text-transition')
+    $('.story-body').removeClass('text-transition')
     $('.option0').text(storyMain.position.choice0);
     $('.option0-desc').html(storyMain.position.choice0desc);
     if (storyMain.position.choice1) {

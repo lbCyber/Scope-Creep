@@ -1,0 +1,80 @@
+@media screen and (max-width: 768px) {
+  /*  COMMON ELEMENTS */
+
+  .body-wrapper {
+    max-width: 768px;
+    min-width:350px;
+  }
+
+  .header-image {
+    width: 100%;
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+
+  aside {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    top:150px;
+  }
+
+  .bread-crumbs {
+    display: flex;
+    font-size: 30px;
+    opacity: 0.8;
+    width: 300px;
+    li {
+      margin: 0 10px;
+    }
+  }
+
+  .story-body {
+    height:100%;
+    max-height:100%;
+  }
+
+  .story-body-text {
+    font-size: 0.8rem;
+  }
+
+  .choices .button {
+    font-size: 0.8rem;
+    padding-top: .9em;
+    min-width: 150px;
+  }
+
+  .choices h3 {
+    font-size: 0.8rem;
+  }
+
+  main {
+    width: calc(100% - 30px);
+    margin: 0 auto;
+  }
+
+  nav {
+    width: 240px;
+    h6 {
+      font-size: 0.6rem;
+      padding-top: 0.2em;
+    }
+  }
+
+  .main-nav-list h6 {
+    font-size:.6rem;
+  }
+
+  footer {
+    padding-left: 240px;
+    p {
+    font-size: 0.6rem;
+    }
+  }
+
+  .home-button {
+    min-width: 150px;
+  }
+}

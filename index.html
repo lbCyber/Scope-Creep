@@ -20,71 +20,65 @@
       <div class="header-image">
         <h1>S<span>c</span>o<span>p</span>e <span>C</span>r<span>e</span>e<span>p</span></h1>
       </div>
-      <nav>
-        <div class="game-options">
-          <label for="game-options-checkbox" name="game-options" class="game-options">options</label>
-        </div>
-        <input type="checkbox" name="game-options-checkbox" id="game-options-checkbox" class="game-options-checkbox">
-        <ul class="main-nav-list">
-          <li><a href="" class="button home-button">restart</a></li>
-          <li><h6><---CHOOSE YOUR STYLE---></h6></li>
-          <li><button class="style-picker" name="style-1" aria-hidden>default</button></li>
-          <li><button class="style-picker" name="style-2" aria-hidden>ibm</button></li>
-          <li><button class="style-picker" name="style-3" aria-hidden>apple-ii</button></li>
-          <li><button class="style-picker" name="style-4" aria-hidden>commodore</button></li>
-          <li><button class="style-picker" name="style-5" aria-hidden>pentium</button></li>
-          <li><button class="style-picker" name="style-6" aria-hidden>plaintext</button></li>
-        </ul>
-      </nav>
     </header>
     <main>
       <aside>
-        <div class="bread-crumbs">
-          <ul>
-            <li><i class="fas fa-mug-hot incomplete-bread-crumb hide-option crumb-1" aria-hidden></i></li>
-            <li><i class="fas fa-bug hide-option incomplete-bread-crumb crumb-2" aria-hidden></i></li>
-            <li><i class="fas fa-comment-dots incomplete-bread-crumb hide-option crumb-3" aria-hidden></i></li>
-          </ul>
-        </div>
+        <ul class="bread-crumbs">
+          <li><i class="fas fa-mug-hot incomplete-bread-crumb hide-option crumb-1" title="Chapter 1" aria-hidden></i>
+          </li>
+          <li><i class="fas fa-bug hide-option incomplete-bread-crumb crumb-2" title="Chapter 1" aria-hidden></i></li>
+          <li><i class="fas fa-comment-dots incomplete-bread-crumb hide-option crumb-3" title="Chapter 1"
+              aria-hidden></i></li>
+        </ul>
       </aside>
+      <h2 class="story-title">Introduction</h2>
       <div class="story-body">
-        <h2 class="story-title">Introduction</h2>
         <form>
           <div class="story-body-text">
-            <p>Story will be generated here. Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, tenetur
-              cumque, deserunt non cum minima quis nostrum iusto nobis molestias fugiat illo quae molestiae facere
-              cupiditate natus vitae. Harum, porro. Aliquam voluptate impedit sed. Unde debitis reiciendis rem, magnam
-              animi ad deleniti necessitatibus? Voluptas, perferendis voluptatibus molestias voluptatem repellat
-              temporibus quos alias ducimus ratione est. Similique accusantium, ipsa commodi officia facilis perferendis
-              sed quos, necessitatibus sint debitis sunt molestiae doloribus aliquid laudantium numquam! Exercitationem,
-              necessitatibus quidem! Quidem vero voluptas officiis! A qui vitae labore? Deserunt nobis omnis molestias
-              sapiente eaque dolores reprehenderit nulla debitis quas mollitia. Vero aut repellat veritatis totam enim
-              sapiente non doloremque dolorum quod reprehenderit consequuntur temporibus error sit, harum quasi
-              laudantium
-              culpa iste debitis ea dolore. Alias esse suscipit aliquid nostrum nemo amet! Aperiam odio sunt, cupiditate
-              id consectetur ipsa aliquid, corrupti at deserunt earum quod vero, voluptatibus et dolorum error porro
-              quasi
-              mollitia autem! Facere, reiciendis. Nesciunt explicabo repellat odit modi doloribus minima dolorem
-              delectus.
-              Exercitationem fuga soluta consectetur inventore velit consequatur, ea explicabo nulla necessitatibus
-              minus
-              temporibus officiis natus, qui a ullam, quae saepe! Ad deleniti quam voluptatem dolor enim voluptates
-              esse,
-              deserunt neque veritatis repudiandae iure quas laborum qui? Similique rem assumenda aliquid!</p>
+            <p>The following is an interactive short story written by Paul Rocca.</p>
+            <p>The code is written from scratch, using an interactive narrative API, also written from scratch.</p>
+            <p>The hope is, with further development, this can can provide a proof-of-concept of an interactive narrative framework in Javascript, similar to what you may find in more elaborate UIs like Twine.</p>
+            <p>If you like the story, please drop me a line at <a href="mailto:paul@lintbox.com">paul(at)lintbox.com</a>!</p>
+            <p>Though the story is intended to be self-contained, it's really only the first part of a larger narrative, so expect developments in the future!</p>
+            <p>Be sure to check the options button below to choose your preferred terminal. If you're on a mobile or tablet, tap options once to read a description of the option, and again to confirm.</p>
+            <p>Otherwise, I hope you enjoy it!</p>
+            <p>:) <span class="caret">_</span></p>
           </div>
           <div class="choices">
-            <p class="button option0">Begin</p>
-            <h3 class="option0-desc">Start the story</h3>
-            <p class="button option1 hide-option"></p>
-            <h3 class="option1-desc"></h3>
+            <div class="choice0">
+              <p class="button option0">Begin</p>
+              <h3 class="option0-desc">Start the story</h3>
+            </div>
+            <div class="choice1">
+              <p class="button option1 hide-option"></p>
+              <h3 class="option1-desc"></h3>
+            </div>
           </div>
         </form>
       </div>
     </main>
-    <footer>
-      <p>Copyright &copy;2019 Paul Rocca</p>
-    </footer>
   </div>
+  <footer>
+    <nav>
+      <label for="game-options-checkbox" name="game-options" class="game-options">options</label>
+      <input type="checkbox" name="game-options-checkbox" id="game-options-checkbox" class="game-options-checkbox">
+      <ul class="main-nav-list">
+        <li><a href="" class="button home-button">restart</a></li>
+        <li>
+          <h6>
+            <---CHOOSE YOUR STYLE--->
+          </h6>
+        </li>
+        <li><button class="style-picker" name="style-1" aria-hidden>default</button></li>
+        <li><button class="style-picker" name="style-2" aria-hidden>ibm</button></li>
+        <li><button class="style-picker" name="style-3" aria-hidden>apple-ii</button></li>
+        <li><button class="style-picker" name="style-4" aria-hidden>commodore</button></li>
+        <li><button class="style-picker" name="style-5" aria-hidden>pentium</button></li>
+        <li><button class="style-picker" name="style-6" aria-hidden>plaintext</button></li>
+      </ul>
+    </nav>
+    <p>Copyright &copy;2019 Paul Rocca</p>
+  </footer>
 </body>
 <script defer src='./js/main.js'></script>
 <script defer src='./js/colourselector.js'></script>

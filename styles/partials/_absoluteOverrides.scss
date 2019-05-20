@@ -1,0 +1,11 @@
+/* ABSOLUTE OVERRIDES */
+
+.text-transition {
+  opacity: 0;
+}
+.option0-desc.show-description, .option1-desc.show-description {
+  opacity: 1;
+}
+.hide-option {
+  display: none;
+}

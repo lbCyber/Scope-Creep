@@ -39,6 +39,7 @@ $plaintext-back: #fff;
 html.style-1 {
   background-color: $default-back;
   color: $default-foreground;
+  scrollbar-color: $default-dark transparent;
   h1,
   h2,
   h3,
@@ -58,8 +59,7 @@ html.style-1 {
   h2,
   h3,
   h4,
-  h5,
-  h6 {
+  h5 {
     text-shadow: 0 0 1.6px $default-foreground;
     color: $default-transparent-30;
   }
@@ -107,6 +107,7 @@ html.style-1 {
 html.style-2 {
   background-color: $ibm-back;
   color: $ibm-foreground;
+  scrollbar-color: $ibm-dark transparent;
   h1,
   h2,
   h3,
@@ -126,8 +127,7 @@ html.style-2 {
   h2,
   h3,
   h4,
-  h5,
-  h6 {
+  h5 {
     text-shadow: 0 0 1.6px $ibm-foreground;
     color: $ibm-transparent-30;
   }
@@ -176,6 +176,7 @@ html.style-2 {
 html.style-3 {
   background-color: $appleii-back;
   color: $appleii-foreground;
+  scrollbar-color: $appleii-dark transparent;
   h1,
   h2,
   h3,
@@ -195,8 +196,7 @@ html.style-3 {
   h2,
   h3,
   h4,
-  h5,
-  h6 {
+  h5 {
     text-shadow: 0 0 1.6px $appleii-foreground;
     color: $appleii-transparent-30;
   }
@@ -245,6 +245,7 @@ html.style-3 {
 html.style-4 {
   background-color: $commodore-back;
   color: $commodore-foreground;
+  scrollbar-color: $commodore-foreground transparent;
   h1,
   h2,
   h3,
@@ -264,8 +265,7 @@ html.style-4 {
   h2,
   h3,
   h4,
-  h5,
-  h6 {
+  h5 {
     text-shadow: 0 0 1.6px $commodore-foreground;
     color: $commodore-transparent-30;
   }
@@ -314,6 +314,7 @@ html.style-4 {
 html.style-5 {
   background-color: $dos-back;
   color: $dos-foreground;
+  scrollbar-color: $dos-dark transparent;
   h1,
   h2,
   h3,
@@ -333,8 +334,7 @@ html.style-5 {
   h2,
   h3,
   h4,
-  h5,
-  h6 {
+  h5 {
     text-shadow: 0 0 1.6px $dos-foreground;
     color: $dos-transparent-30;
   }
@@ -383,6 +383,11 @@ html.style-5 {
 html.style-6 {
   background-color: $plaintext-back;
   color: $plaintext-foreground;
+  scrollbar-color: $plaintext-foreground transparent;
+
+  h6 {
+    color: $plaintext-back;
+  }
 
   .button,
   button,

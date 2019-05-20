@@ -1,0 +1,28 @@
+@media screen and (max-width: 1024px) {
+  
+  /*  COMMON ELEMENTS */
+
+  .body-wrapper {
+    max-width: 1024px;
+  }
+
+  .header-image {
+    width: calc(100% - 180px);
+    h1 {
+      font-size: 4rem;
+    }
+  }
+
+  aside {
+    width:180px;
+  }
+
+  .bread-crumbs {
+    font-size:60px;
+  }
+
+  main {
+    width: calc(100% - 180px);
+    margin: 0 0 0 180px;
+  }
+}
