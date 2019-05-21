@@ -3,9 +3,19 @@
 .text-transition {
   opacity: 0;
 }
-.option0-desc.show-description, .option1-desc.show-description {
-  opacity: 1;
-}
+
 .hide-option {
   display: none;
+}
+
+.option0-desc.show-description,
+.option1-desc.show-description {
+  opacity: 1;
+}
+
+@media screen and (min-width: 769px) {
+  .choice0:hover > .option0-desc,
+  .choice1:hover > .option1-desc {
+    opacity: 1;
+  }
 }

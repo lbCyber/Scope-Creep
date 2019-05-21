@@ -63,6 +63,13 @@ ul {
 
 /*  COMMON ELEMENTS */
 
+.dummy-focus {
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -1000px;
+}
+
 .body-wrapper {
   max-width: 1600px;
   margin: 0 auto;
@@ -109,11 +116,11 @@ button,
 /*  SKIP BOX  */
 
 .skip-box {
-  left: 37.5%;
+  left: calc(50% - 150px);
   position: absolute;
   text-align: center;
   top: -1000px;
-  width: 30%;
+  width: 300px;
   z-index: 999;
   height: 50px;
   text-decoration: none;
@@ -236,16 +243,6 @@ form {
     pointer-events: none;
     left: -5px;
   }
-}
-
-.choice0:hover > .option0-desc,
-.choice1:hover > .option1-desc {
-  opacity: 1;
-}
-
-.choice0:hover + .choice1 > .show-description,
-.option1:hover + .choice0 > .show-description {
-  opacity: 0;
 }
 
 /*  FOOTER  */

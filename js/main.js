@@ -1,3 +1,4 @@
+//  GLOBAL VARIABLES
 let currentChapter = "";
 let currentBranch = "";
 let currentPart = "";
@@ -5,6 +6,7 @@ let doubleTap = false;
 let activeChoice = "";
 let mobileState = 0;
 
+//  MAIN STORY OBJECT
 const storyMain = {
   position: {
     chapter: "start",
@@ -24,8 +26,11 @@ const storyMain = {
   state: 0
 }
 
+//  DOCUMENT READY
 $(function () {
+
   storyMain.grabStory();
+
   $('.option0').on('click', function () {
     mobileCheck('0')
     if (mobileState != 1) {
@@ -44,6 +49,7 @@ $(function () {
       $('.option0-desc').addClass('show-description');
     }
   });
+
   $('.option1').on('click', function () {
     mobileCheck('1')
     if (mobileState != 1) {
@@ -67,10 +73,11 @@ $(function () {
   });
 });
 
-const chapterCheck = function (option) {
+//  FUNCTIONS
+const chapterCheck = function (option) {  // CHECKS WHAT CHAPTER THE OPTION CHOSEN WILL TAKE US TO, AND MAKE DOM CHANGES (TITLE AND ASIDE)
   if (readChanges(option)['chapter']) {
     let crumb = readChanges(option)['chapter'];
-    if (crumb === 'chap1') {
+    if ((crumb === 'chap1') || (crumb === 'start')) {
       $('.story-title').text('Chapter 1');
       $('.crumb-1').removeClass('hide-option');
     } else if (crumb === 'chap2') {
@@ -93,7 +100,7 @@ const chapterCheck = function (option) {
   }
 }
 
-storyMain.grabStory = function () {
+storyMain.grabStory = function () { // GRABS STORY API, STORES IN MAIN STORY OBJECT
   $.ajax({
     url: './js/story.json',
     method: `GET`,
@@ -103,7 +110,7 @@ storyMain.grabStory = function () {
   });
 }
 
-const mobileCheck = function (choice) {
+const mobileCheck = function (choice) { // CHECKS IF MOBILE DIMENSIONS ARE ACTIVE, THEN OPTIONS REQUIRE DOUBLE CLICK TO ENGAGE (ALLOWS DESCRIPTIONS TO APPEAR SINCE NO HOVER STATE POSSIBLE)
   let clientWidth = window.innerWidth;
   if (clientWidth < 769) {
     if (!doubleTap) {
@@ -125,7 +132,7 @@ const mobileCheck = function (choice) {
   }
 }
 
-const nameInput = function () {
+const nameInput = function () { // REGEX FOR NAME INPUT
   let nameEntered = smartAssDetector($('.name-field').val());
   if (nameEntered !== '') {
     storyMain.name = capitalizeInput(nameEntered);
@@ -134,37 +141,41 @@ const nameInput = function () {
   }
 }
 
-const base = function () {
+const base = function () {  // OUTPUTS UPCOMING POSITION IN STORY
   return storyMain.storyData[currentChapter][currentBranch][currentPart];
 };
 
-const currentBase = function () {
+const currentBase = function () { // QUICK REFERENCE TO OUR RECORDED POSITION IN STORY
   return storyMain.position;
 };
 
-const capitalizeInput = function (input) {
+const capitalizeInput = function (input) {  // REGEX TO CAPITALIZE INPUT
   capitalizer = function (c) {
     return c.toUpperCase();
   }
   return input.replace(/^\w/, capitalizer(input.charAt(0)));
 }
 
-const refreshPosition = function () {
+const refreshPosition = function () { // RECALL VARIABLES DETERMINING CURRENT POSITION IN STORY
   currentChapter = storyMain.position.chapter;
   currentBranch = storyMain.position.branch;
   currentPart = storyMain.position.part;
 }
 
-const readChanges = function (choice) {
+const readChanges = function (choice) { // CHECK CHANGES CONTAINED IN INPUTTED OPTION
   refreshPosition();
   changes = base()[choice][2];
   if (base()[choice][3] !== undefined) {
+    if (base()[choice][3] == 'empty') {
+      storyMain["choices"] = [];
+    } else {
     storyMain["choices"].push(base()[choice][3])
+    }
   }
   return changes;
 }
 
-const readNewPosition = function () {
+const readNewPosition = function () { // OUTPUT A COMPLETE LIST OF QUEUED CHANGES
   refreshPosition();
   readArray = {};
   readArray["choice0"] = base().choice0[0];
@@ -181,11 +192,11 @@ const readNewPosition = function () {
   return readArray;
 }
 
-const initChanges = function () {
+const initChanges = function () { // RECORD LIST OF QUEUED CHANGES
   $.extend(storyMain.position, readNewPosition());
 }
 
-const smartAssDetector = function (dumbname) {
+const smartAssDetector = function (dumbname) {  // REPLACE DUMB NAMES INPUTTED. RECORD USER AS SMARTASS
   if ((dumbname == 'fuck') || (dumbname == 'ass') || (dumbname == 'shit') || (dumbname == 'dumb') || (dumbname == 'penis') || (dumbname == 'bepis') || (dumbname == 'douchebag') || (dumbname == 'butt')) {
     storyMain['choices'].push('smartass');
     return 'Jon Arbuckle';
@@ -194,7 +205,7 @@ const smartAssDetector = function (dumbname) {
   }
 }
 
-const injectChanges = function (choice) {
+const injectChanges = function (choice) { // APPLY CHANGES TO DOM
   initChanges();
   $('.story-body').addClass('text-transition');
   setTimeout(function () {
@@ -217,5 +228,7 @@ const injectChanges = function (choice) {
     if (storyMain.position.image) {
       $('.story-body').style.image = `url: "./assets/${storyMain.position.image}"`;
     }
+    $('.dummy-focus').focus();
+    $('.dummy-focus').blur();
   }, 750);
 }
