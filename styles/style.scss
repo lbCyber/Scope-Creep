@@ -38,10 +38,11 @@ nav {
 
 h1 {
   position: relative;
-  text-decoration: underline overline dotted;
   max-width: 100%;
   display: inline-block;
   margin: 0 auto;
+  border-top: 5px dotted;
+  border-bottom: 5px dotted;
 }
 
 h1,
@@ -105,6 +106,25 @@ button,
   animation-fill-mode: none;
 }
 
+/*  SKIP BOX  */
+
+.skip-box {
+  left: 37.5%;
+  position: absolute;
+  text-align: center;
+  top: -1000px;
+  width: 30%;
+  z-index: 999;
+  height: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-top: 0.6rem;
+}
+
+.skip-box:focus {
+  top: 0px;
+}
+
 /*  HEADER  */
 
 header {
@@ -123,7 +143,7 @@ header {
   height: 200px;
   max-height: 200px;
   align-items: center;
-  user-select:none;
+  user-select: none;
   span {
     animation: title-glitch 250s step-end infinite;
     animation-fill-mode: none;
@@ -182,10 +202,6 @@ form {
   opacity: 1;
 }
 
-.main-nav-list li {
-  min-width: 150px;
-}
-
 .story-body-text {
   input {
     width: 70%;
@@ -197,8 +213,9 @@ form {
   }
 }
 
-.choice0, .choice1 {
-  display:inline-block;
+.choice0,
+.choice1 {
+  display: inline-block;
 }
 
 .choices {
@@ -206,7 +223,7 @@ form {
   text-align: center;
   min-height: 100px;
   margin-top: 80px;
-  user-select:none;
+  user-select: none;
   h3 {
     transition: opacity 0.5s;
     position: absolute;
@@ -217,7 +234,7 @@ form {
     text-decoration: underline dotted;
     cursor: default;
     pointer-events: none;
-    left:0;
+    left: -5px;
   }
 }
 
@@ -228,7 +245,7 @@ form {
 
 .choice0:hover + .choice1 > .show-description,
 .option1:hover + .choice0 > .show-description {
-  opacity:0;
+  opacity: 0;
 }
 
 /*  FOOTER  */
@@ -250,14 +267,14 @@ footer {
 
 nav {
   position: absolute;
-  left:0;
+  left: 0;
   width: 300px;
   padding: 10px;
   z-index: 999;
-  min-height:90px;
+  min-height: 90px;
   display: flex;
   flex-direction: column;
-  bottom: 0;
+  bottom: 5px;
   justify-content: flex-end;
   z-index: -2;
 }
@@ -276,9 +293,9 @@ nav {
 }
 
 .main-nav-list {
-  height:0;
-  overflow:hidden;
-  bottom:0;
+  height: 0;
+  overflow: hidden;
+  bottom: -5px;
   padding: 20px 20px 0;
   display: flex;
   flex-direction: column;
@@ -293,8 +310,11 @@ nav {
     text-align: center;
     font-size: 0.8rem;
   }
+  li {
+    min-width: 150px;
+  }
   & li:nth-child(2) {
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     height: 2em;
     padding-top: 0.4em;
     border-radius: 40px;
@@ -331,4 +351,4 @@ nav {
 @import "partials/1024";
 @import "partials/768";
 @import "partials/420";
-@import "partials/absoluteOverrides"
+@import "partials/absoluteOverrides";

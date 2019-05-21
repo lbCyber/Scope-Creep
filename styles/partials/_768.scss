@@ -6,19 +6,28 @@
     min-width:350px;
   }
 
+  /*  HEADER  */
+
+  header {
+    height: 100px;
+  }
+
   .header-image {
     width: 100%;
+    height: 100%;
     h1 {
       font-size: 2.5rem;
     }
   }
 
+  /*  ASIDE - BREAD CRUMBS  */
+
   aside {
-    height: 80px;
+    height: 50px;
     width: 100%;
     display: flex;
     justify-content: center;
-    top:150px;
+    top:95px;
   }
 
   .bread-crumbs {
@@ -29,6 +38,14 @@
     li {
       margin: 0 10px;
     }
+  }
+
+  /*  MAIN  */
+
+  main {
+    width: calc(100% - 30px);
+    margin: 0 auto;
+    height:calc(100% - 180px);
   }
 
   .story-body {
@@ -50,9 +67,13 @@
     font-size: 0.8rem;
   }
 
-  main {
-    width: calc(100% - 30px);
-    margin: 0 auto;
+  /*  FOOTER  */
+
+  footer {
+    padding-left: 240px;
+    p {
+    font-size: 0.6rem;
+    }
   }
 
   nav {
@@ -65,13 +86,6 @@
 
   .main-nav-list h6 {
     font-size:.6rem;
-  }
-
-  footer {
-    padding-left: 240px;
-    p {
-    font-size: 0.6rem;
-    }
   }
 
   .home-button {

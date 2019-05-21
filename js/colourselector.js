@@ -7,6 +7,10 @@ const colourPicker = function (colour) {
 
 $(function () {
   $('.style-picker').on('click', function () {
-    colourPicker($(this).attr('name'));
+    if (this.hasAttribute('name')) {
+      colourPicker($(this).attr('name'));
+    } else {
+      colourPicker('style-6');
+    }
   });
 });

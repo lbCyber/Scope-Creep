@@ -6,12 +6,16 @@
     max-width: 1024px;
   }
 
+  /*  HEADER  */
+
   .header-image {
     width: calc(100% - 180px);
     h1 {
       font-size: 4rem;
     }
   }
+
+  /*  ASIDE - BREAD CRUMBS  */
 
   aside {
     width:180px;
@@ -20,6 +24,8 @@
   .bread-crumbs {
     font-size:60px;
   }
+
+  /*  MAIN  */
 
   main {
     width: calc(100% - 180px);

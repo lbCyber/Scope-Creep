@@ -116,7 +116,7 @@
   "chap2": {
     "branch0": {
       "part1": {
-        "text": "<p>At least you know where to start.</p><p>You download the attachment and extract it like she asked. You write a small html file with your own quick personal flourishes and deduce which file to embed.</p><p>There's a small file with the filename &quot;linkThisFileOkay-2.js&quot;. You figure that's the one. A quick check of the contents reveals a short but indecipherable amount of code that seems to call data from the other files you uploaded to the server. With nothing else to do, you save what you have and open up the dummy file.<span class='caret'>_</span></p>",
+        "text": "<p>At least you know where to start.</p><p>You download the attachment and extract it like she asked. You write a small html file with your own quick personal flourishes and deduce which file to embed.</p><p>There's a small file with the filename &quot;AlexRulzOkay-2.js&quot;. You figure that's the one. A quick check of the contents reveals a short but indecipherable amount of code that seems to call data from the other files you uploaded to the server. With nothing else to do, you save what you have and open up the dummy file.<span class='caret'>_</span></p>",
         "image": false,
         "choice0": [
           "let's do this",
@@ -230,7 +230,7 @@
     },
     "branch1": {
       "part4": {
-        "text": "<p>After giving the script a minute or two to run, you're still left looking at a blank screen. Either you did something wrong or the program is a bust.<span class='caret'>_</span></p>",
+        "text": "<p>Nothing's on screen. That could just mean there's a lot of code to process. Could mean it's broken. Either way, waiting one minute didn't help.<span class='caret'>_</span></p>",
         "image": false,
         "choice0": [
           "keep waiting",

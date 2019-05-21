@@ -248,11 +248,11 @@ nav {
 
 h1 {
   position: relative;
-  -webkit-text-decoration: underline overline dotted;
-  text-decoration: underline overline dotted;
   max-width: 100%;
   display: inline-block;
   margin: 0 auto;
+  border-top: 5px dotted;
+  border-bottom: 5px dotted;
 }
 
 h1,
@@ -328,6 +328,24 @@ button,
   animation: blink-caret 0.6s step-end infinite;
   -webkit-animation-fill-mode: none;
   animation-fill-mode: none;
+}
+
+/*  SKIP BOX  */
+.skip-box {
+  left: 37.5%;
+  position: absolute;
+  text-align: center;
+  top: -1000px;
+  width: 30%;
+  z-index: 999;
+  height: 50px;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-top: 0.6rem;
+}
+
+.skip-box:focus {
+  top: 0px;
 }
 
 /*  HEADER  */
@@ -429,10 +447,6 @@ form {
   opacity: 1;
 }
 
-.main-nav-list li {
-  min-width: 150px;
-}
-
 .story-body-text input {
   width: 70%;
   text-align: center;
@@ -442,7 +456,8 @@ form {
   font-family: "IBM Plex Mono", monospace;
 }
 
-.choice0, .choice1 {
+.choice0,
+.choice1 {
   display: inline-block;
 }
 
@@ -470,7 +485,7 @@ form {
   text-decoration: underline dotted;
   cursor: default;
   pointer-events: none;
-  left: 0;
+  left: -5px;
 }
 
 .choice0:hover > .option0-desc,
@@ -520,7 +535,7 @@ nav {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  bottom: 0;
+  bottom: 5px;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
   justify-content: flex-end;
@@ -544,7 +559,7 @@ nav {
 .main-nav-list {
   height: 0;
   overflow: hidden;
-  bottom: 0;
+  bottom: -5px;
   padding: 20px 20px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -567,6 +582,10 @@ nav {
 .main-nav-list h6 {
   text-align: center;
   font-size: 0.8rem;
+}
+
+.main-nav-list li {
+  min-width: 150px;
 }
 
 .main-nav-list li:nth-child(2) {
@@ -1172,6 +1191,7 @@ html.style-6 .incomplete-bread-crumb {
   .body-wrapper {
     max-width: 1280px;
   }
+  /*  HEADER  */
   header {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
@@ -1181,13 +1201,16 @@ html.style-6 .incomplete-bread-crumb {
   .header-image {
     width: calc(100% - 320px);
   }
+  /*  ASIDE - BREAD CRUMBS  */
   aside {
     width: 320px;
   }
+  /*  MAIN  */
   main {
     width: calc(100% - 320px);
     margin: 0 0 0 320px;
   }
+  /*  FOOTER  */
   footer {
     padding-left: 320px;
   }
@@ -1198,18 +1221,21 @@ html.style-6 .incomplete-bread-crumb {
   .body-wrapper {
     max-width: 1024px;
   }
+  /*  HEADER  */
   .header-image {
     width: calc(100% - 180px);
   }
   .header-image h1 {
     font-size: 4rem;
   }
+  /*  ASIDE - BREAD CRUMBS  */
   aside {
     width: 180px;
   }
   .bread-crumbs {
     font-size: 60px;
   }
+  /*  MAIN  */
   main {
     width: calc(100% - 180px);
     margin: 0 0 0 180px;
@@ -1222,14 +1248,20 @@ html.style-6 .incomplete-bread-crumb {
     max-width: 768px;
     min-width: 350px;
   }
+  /*  HEADER  */
+  header {
+    height: 100px;
+  }
   .header-image {
     width: 100%;
+    height: 100%;
   }
   .header-image h1 {
     font-size: 2.5rem;
   }
+  /*  ASIDE - BREAD CRUMBS  */
   aside {
-    height: 80px;
+    height: 50px;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1237,7 +1269,7 @@ html.style-6 .incomplete-bread-crumb {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    top: 150px;
+    top: 95px;
   }
   .bread-crumbs {
     display: -webkit-box;
@@ -1249,6 +1281,12 @@ html.style-6 .incomplete-bread-crumb {
   }
   .bread-crumbs li {
     margin: 0 10px;
+  }
+  /*  MAIN  */
+  main {
+    width: calc(100% - 30px);
+    margin: 0 auto;
+    height: calc(100% - 180px);
   }
   .story-body {
     height: 100%;
@@ -1265,9 +1303,12 @@ html.style-6 .incomplete-bread-crumb {
   .choices h3 {
     font-size: 0.8rem;
   }
-  main {
-    width: calc(100% - 30px);
-    margin: 0 auto;
+  /*  FOOTER  */
+  footer {
+    padding-left: 240px;
+  }
+  footer p {
+    font-size: 0.6rem;
   }
   nav {
     width: 240px;
@@ -1278,12 +1319,6 @@ html.style-6 .incomplete-bread-crumb {
   }
   .main-nav-list h6 {
     font-size: .6rem;
-  }
-  footer {
-    padding-left: 240px;
-  }
-  footer p {
-    font-size: 0.6rem;
   }
   .home-button {
     min-width: 150px;
