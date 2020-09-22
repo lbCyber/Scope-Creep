@@ -102,7 +102,7 @@ const chapterCheck = function (option) {  // CHECKS WHAT CHAPTER THE OPTION CHOS
 
 storyMain.grabStory = function () { // GRABS STORY API, STORES IN MAIN STORY OBJECT
   $.ajax({
-    url: './js/story.json',
+    url: './js/story.min.json',
     method: `GET`,
     dataType: `json`
   }).then(function (storyData) {
@@ -117,14 +117,14 @@ const mobileCheck = function (choice) { // CHECKS IF MOBILE DIMENSIONS ARE ACTIV
       doubleTap = true;
       activeChoice = choice;
       mobileState = 1;
-    } else if (doubleTap && (activeChoice == choice)) {
-      doubleTap = false;
-      mobileState = 2;
-      activeChoice = "";
     } else {
       doubleTap = false;
       activeChoice = "";
-      mobileState = 1
+      if (doubleTap && (activeChoice == choice)) {
+        mobileState = 2;
+      } else {
+        mobileState = 1
+      }
     }
   } else {
     mobileState = 0;
@@ -169,7 +169,7 @@ const readChanges = function (choice) { // CHECK CHANGES CONTAINED IN INPUTTED O
     if (base()[choice][3] == 'empty') {
       storyMain["choices"] = [];
     } else {
-    storyMain["choices"].push(base()[choice][3])
+      storyMain["choices"].push(base()[choice][3])
     }
   }
   return changes;
