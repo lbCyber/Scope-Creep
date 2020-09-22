@@ -83,10 +83,15 @@
         <li><button class="style-picker" name="style-6" aria-hidden>plaintext</button></li>
       </ul>
     </nav>
-    <p>Copyright &copy;2019 Paul Rocca</p>
+    <p id="copyright">Scope Creep / Lintbox - &copy; Paul R.</p>
   </footer>
 </body>
 <script defer src='./js/main.js'></script>
 <script defer src='./js/colourselector.js'></script>
-
+<script>
+  document.addEventListener('DOMContentLoaded', function(event) {
+    let d = new Date()
+    document.getElementById("copyright").innerText=`Scope Creep / Lintbox - \u00A9 Paul R. - ${d.getFullYear()}`
+  })
+</script>
 </html>
